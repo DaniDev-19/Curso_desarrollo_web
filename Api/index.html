@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio JSON: Productos</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>Ejercicio JSON con HTML, CSS y JavaScript</h1>
+      <p class="subtitle">Carga datos desde <code>core.json</code>, crea tarjetas de producto y usa JavaScript para mostrar la información.</p>
+    </header>
+
+    <section class="instructions">
+      <h2>Qué aprenderás</h2>
+      <ul>
+        <li>Cómo leer un archivo JSON con <code>fetch</code>.</li>
+        <li>Cómo generar HTML dinámicamente con JavaScript.</li>
+        <li>Cómo aplicar estilos con CSS para mostrar tarjetas responsivas.</li>
+        <li>Cómo usar un elemento <code>&lt;picture&gt;</code> para imágenes adaptativas.</li>
+      </ul>
+    </section>
+
+    <section class="controls">
+      <label for="categoria">Filtrar por categoría:</label>
+      <select id="categoria">
+        <option value="todos">Todos</option>
+      </select>
+    </section>
+
+    <section id="productos" class="cards-grid">
+      <div class="card no-data">Cargando productos...</div>
+    </section>
+
+    <footer class="page-footer">
+      <p>Archivo JSON utilizado: <code>core.json</code></p>
+    </footer>
+
+    <script src="api.js"></script>
+  </body>
+</html>

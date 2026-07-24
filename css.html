@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Curso introductorio de CSS para estilizar páginas web con diseño, colores, tipografías y maquetación responsiva." />
+    <title>Curso de CSS para estudiantes</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <p class="eyebrow">Módulo 2 · Diseño web</p>
+      <h1>CSS: el lenguaje del estilo</h1>
+      <p class="lead">
+        Después de aprender HTML, el siguiente paso es dar vida y personalidad a las páginas.
+        CSS permite controlar colores, tipografías, espacios, disposición, animaciones y diseño responsivo.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#conceptos">Ver conceptos</a>
+        <a class="btn btn-secondary" href="#actividades">Actividades</a>
+      </div>
+    </header>
+
+    <nav class="top-nav" aria-label="Navegación del curso de CSS">
+      <a href="#conceptos">Conceptos</a>
+      <a href="#selectores">Selectores</a>
+      <a href="#propiedades">Propiedades</a>
+      <a href="#colores">Colores</a>
+      <a href="#box-model">Box model</a>
+      <a href="#flexbox">Flexbox</a>
+      <a href="#grid">Grid</a>
+      <a href="#animaciones">Animaciones</a>
+      <a href="#responsive">Responsive</a>
+      <a href="#actividades">Actividades</a>
+    </nav>
+
+    <main>
+      <section id="conceptos" class="intro-grid">
+        <article class="card">
+          <h2>¿Qué es CSS?</h2>
+          <p>
+            CSS significa Cascading Style Sheets, o hojas de estilo en cascada. Se utiliza para dar apariencia visual a una página web.
+            Mientras HTML define la estructura, CSS define colores, tipografía, espacios, distribución y efectos visuales.
+          </p>
+          <div class="tip-box">
+            HTML organiza el contenido; CSS lo presenta con estilo, orden y armonía.
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Sintaxis básica y cascade</h2>
+          <pre><code>p {
+  color: blue;
+  font-size: 18px;
+}</code></pre>
+          <p>
+            Un selector indica qué elemento se va a modificar y luego se definen las propiedades con sus valores.
+            La palabra "cascada" significa que las reglas se aplican en orden y pueden sobrescribirse entre sí según su especificidad.
+          </p>
+          <p>
+            La prioridad en CSS se determina por:
+            <strong>importancia</strong> (<code>!important</code>),
+            <strong>especificidad</strong> (ID > clase > elemento),
+            y finalmente el orden en el código.
+          </p>
+          <pre><code>p { color: black; }
+.texto { color: green; }
+#principal { color: red; }</code></pre>
+          <p>
+            En este ejemplo, el estilo del ID gana porque tiene mayor especificidad.
+          </p>
+        </article>
+      </section>
+
+      <section id="selectores">
+        <h2 class="section-title">Selectores y pseudo-clases</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Selectores básicos</h3>
+            <pre><code>h1 { color: darkblue; }
+p { line-height: 1.6; }
+button { background: #4f46e5; }</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Clases, IDs y atributos</h3>
+            <pre><code>.card {
+  border-radius: 12px;
+}
+
+#titulo-principal {
+  font-weight: bold;
+}
+
+input[type='text'] {
+  border: 1px solid #999;
+}</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Combinadores y pseudo-clases</h3>
+            <p>Los combinadores permiten seleccionar elementos relativos a otros.</p>
+            <pre><code>nav a:hover { color: #fff; }
+li > a { text-decoration: none; }
+section + section { margin-top: 40px; }</code></pre>
+            <p>
+              Las pseudo-clases como <code>:hover</code>, <code>:focus</code>, <code>:active</code> y <code>:nth-child()</code> seleccionan estados o posiciones específicas.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="propiedades">
+        <h2 class="section-title">Propiedades esenciales de CSS</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Texto y tipografía</h3>
+            <ul>
+              <li><strong>color</strong>: define el color del texto.</li>
+              <li><strong>font-family</strong>: define la tipografía.</li>
+              <li><strong>font-size</strong>: tamaño de texto.</li>
+              <li><strong>line-height</strong>: altura de línea.</li>
+              <li><strong>font-weight</strong>: grosor de la letra.</li>
+            </ul>
+            <pre><code>body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Espacios y cajas</h3>
+            <ul>
+              <li><strong>margin</strong>: espacio fuera de la caja.</li>
+              <li><strong>padding</strong>: espacio dentro de la caja.</li>
+              <li><strong>border</strong>: borde alrededor del contenido.</li>
+              <li><strong>box-sizing</strong>: controla si el padding y borde se suman al ancho.</li>
+            </ul>
+            <pre><code>.caja {
+  box-sizing: border-box;
+  margin: 20px;
+  padding: 16px;
+  border: 1px solid #ccc;
+}</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Fondo y color</h3>
+            <ul>
+              <li><strong>background-color</strong>: color de fondo.</li>
+              <li><strong>background-image</strong>: imagen de fondo.</li>
+              <li><strong>background-size</strong>: tamaño del fondo.</li>
+              <li><strong>background-position</strong>: posición de la imagen.</li>
+              <li><strong>opacity</strong>: transparencia.</li>
+            </ul>
+            <pre><code>.hero {
+  background-color: #0f172a;
+  background-image: linear-gradient(135deg, #2563eb, #14b8a6);
+  color: white;
+}</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Tamaño y visualización</h3>
+            <ul>
+              <li><strong>display</strong>: define cómo se muestra un elemento.</li>
+              <li><strong>width</strong> y <strong>height</strong>: dimensiones.</li>
+              <li><strong>max-width</strong> y <strong>min-height</strong>: límites de tamaño.</li>
+              <li><strong>overflow</strong>: controla el contenido que sobresale.</li>
+            </ul>
+            <pre><code>.contenedor {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section id="colores">
+        <h2 class="section-title">Colores y unidades</h2>
+        <article class="card large-card">
+          <p>CSS permite definir colores de muchas maneras y usar unidades relativas o absolutas para medidas.</p>
+          <h3>Tipos de colores</h3>
+          <ul>
+            <li><strong>Nombres</strong>: <code>red</code>, <code>blue</code>, <code>rebeccapurple</code>.</li>
+            <li><strong>Hexadecimal</strong>: <code>#ff0000</code>, <code>#00ff00</code>.</li>
+            <li><strong>RGB / RGBA</strong>: <code>rgb(255,0,0)</code>, <code>rgba(255,0,0,0.5)</code>.</li>
+            <li><strong>HSL / HSLA</strong>: <code>hsl(0, 100%, 50%)</code>, <code>hsla(0, 100%, 50%, 0.6)</code>.</li>
+            <li><strong>Gradientes</strong>: lineales y radiales.</li>
+          </ul>
+          <pre><code>.fondo-color {
+  background: linear-gradient(90deg, #0ea5e9, #7c3aed);
+}
+
+.texto-transparente {
+  color: rgba(255, 255, 255, 0.85);
+}</code></pre>
+          <h3>Unidades y operaciones</h3>
+          <p>Las unidades pueden ser:</p>
+          <ul>
+            <li><strong>px</strong>: píxeles fijos.</li>
+            <li><strong>em</strong>, <strong>rem</strong>: relativos a la fuente.</li>
+            <li><strong>%</strong>: relativos al contenedor.</li>
+            <li><strong>vw</strong> y <strong>vh</strong>: relativos a la ventana.</li>
+          </ul>
+          <pre><code>.tarjeta {
+  width: calc(100% - 40px);
+  padding: 2rem;
+  margin: 1rem auto;
+}</code></pre>
+          <p>CSS también puede calcular valores con <code>calc()</code>, <code>min()</code>, <code>max()</code> y <code>clamp()</code>. Esto permite operaciones matemáticas como sumar, restar o combinar unidades.</p>
+          <pre><code>.banner {
+  width: calc(100% - 2rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  padding: min(3vw, 24px);
+}</code></pre>
+
+          <h3>Unidades comunes y cuándo usar cada una</h3>
+          <ul>
+            <li><strong>px</strong>: unidad absoluta. Ideal para bordes finos, iconos o layouts muy controlados. No escala con la fuente del usuario.</li>
+            <li><strong>rem</strong>: relativo al tamaño de fuente raíz (<code>html</code>). Es útil para escalado consistente en todo el sitio.</li>
+            <li><strong>em</strong>: relativo al tamaño de fuente del elemento actual. Se usa para componentes que deben escalar desde su contenedor.</li>
+            <li><strong>%</strong>: relativo al contenedor padre. Muy útil para anchuras y alturas flexibles en diseños responsivos.</li>
+            <li><strong>vw</strong> y <strong>vh</strong>: relativos al ancho y alto de la ventana. Útiles para secciones de pantalla completa y tipografía responsiva.</li>
+            <li><strong>fr</strong>: unidad especial de Grid que divide el espacio disponible. Ideal para distribuciones flexibles en cuadrículas.</li>
+            <li><strong>ch</strong> y <strong>ex</strong>: relativos al ancho del carácter “0” y a la altura de la “x”. Se usan para tipografía y diseño de texto.</li>
+          </ul>
+
+          <h3>Ejemplos de uso práctico</h3>
+          <pre><code>html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;     /* 16px */
+}
+
+h1 {
+  font-size: 2rem;     /* 32px */
+}
+
+.card {
+  width: 90%;
+  max-width: 50rem;
+  padding: 1.5rem;
+}
+
+.menu {
+  gap: 1em;
+}
+
+.banner {
+  height: 50vh;
+}</code></pre>
+        </article>
+      </section>
+
+      <section id="custom-properties">
+        <h2 class="section-title">Custom properties y variables CSS</h2>
+        <article class="card large-card">
+          <p>Las custom properties son variables que puedes definir en CSS y reutilizar en cualquier regla.</p>
+          <h3>Cómo se definen</h3>
+          <pre><code>:root {
+  --color-principal: #2563eb;
+  --texto: #f8fafc;
+  --espacio: 1.5rem;
+}</code></pre>
+          <h3>Cómo se usan</h3>
+          <pre><code>.boton {
+  background-color: var(--color-principal);
+  color: var(--texto);
+  padding: var(--espacio);
+}</code></pre>
+          <p>Las custom properties son muy útiles para mantener un diseño consistente y cambiar temas con facilidad.</p>
+          <h3>Ventajas</h3>
+          <ul>
+            <li>Reutilización de valores en todo el sitio.</li>
+            <li>Cambios rápidos de paleta o espaciado.</li>
+            <li>Se pueden cambiar dinámicamente con JavaScript.</li>
+          </ul>
+          <h3>Valores por defecto y herencia</h3>
+          <pre><code>.boton {
+  color: var(--texto, black);
+}</code></pre>
+          <p>Si la variable no existe, puedes proporcionar un valor por defecto después de la coma.</p>
+        </article>
+      </section>
+
+      <section id="box-model">
+        <h2 class="section-title">Box model y prioridad</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Box model en detalle</h3>
+            <p>Cada elemento tiene:</p>
+            <ul>
+              <li><strong>content</strong>: contenido.</li>
+              <li><strong>padding</strong>: espacio interno.</li>
+              <li><strong>border</strong>: borde.</li>
+              <li><strong>margin</strong>: espacio externo.</li>
+            </ul>
+            <pre><code>.caja {
+  box-sizing: border-box;
+  padding: 16px;
+  border: 1px solid #dee2e6;
+  margin: 24px;
+}</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Especificidad y orden</h3>
+            <p>La prioridad en la cascada se aplica así:</p>
+            <ol>
+              <li>Estilos en línea (<code>style="..."</code>).</li>
+              <li>ID (<code>#id</code>).</li>
+              <li>Clase (<code>.clase</code>), atributo, pseudo-clase.</li>
+              <li>Selector de elemento (<code>div</code>, <code>p</code>).</li>
+              <li>Regla última definida gana si la especificidad es igual.</li>
+            </ol>
+            <pre><code>p { color: blue; }
+.texto { color: red; }
+#principal { color: green; }</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Herencia</h3>
+            <p>Algunas propiedades se heredan a los elementos hijos, como <code>color</code> y <code>font-family</code>. Otras no, como <code>margin</code> o <code>padding</code>.</p>
+            <p>Usar <code>inherit</code> o <code>initial</code> permite controlar la herencia manualmente.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="flexbox">
+        <h2 class="section-title">Flexbox a fondo</h2>
+        <article class="card large-card">
+          <p>Flexbox es ideal para alinear y distribuir elementos en una sola dimensión: fila o columna.</p>
+          <h3>Contenedor flexible</h3>
+          <pre><code>.fila {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}</code></pre>
+          <p>
+            <strong>justify-content</strong> distribuye elementos en el eje principal.
+            <strong>align-items</strong> alinea en el eje secundario.
+          </p>
+          <h3>Ítems flexibles</h3>
+          <pre><code>.item {
+  flex: 1 1 200px;
+  order: 1;
+  align-self: flex-start;
+}</code></pre>
+          <p>
+            <strong>flex</strong> combina <code>grow</code>, <code>shrink</code> y <code>basis</code>.
+            <strong>order</strong> cambia el orden visual.
+            <strong>align-self</strong> ajusta un solo elemento diferente al resto.
+          </p>
+          <h3>Casos de uso</h3>
+          <ul>
+            <li>barra de navegación</li>
+            <li>botones en fila</li>
+            <li>marcos centrados vertical y horizontalmente</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="grid">
+        <h2 class="section-title">CSS Grid a fondo</h2>
+        <article class="card large-card">
+          <p>Grid maneja filas y columnas, por lo que es perfecto para diseños en dos dimensiones.</p>
+          <h3>Contenedor de grid</h3>
+          <pre><code>.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+}
+
+.item-1 {
+  grid-column: 1 / span 2;
+}
+
+.item-2 {
+  grid-row: 1 / 3;
+}</code></pre>
+          <p>
+            <strong>repeat()</strong> repite columnas. <strong>1fr</strong> distribuye espacio disponible.
+            <strong>gap</strong> controla separación entre filas y columnas.
+          </p>
+          <h3>Áreas de grid</h3>
+          <pre><code>.layout {
+  grid-template-areas:
+    'header header'
+    'sidebar content'
+    'footer footer';
+}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.content { grid-area: content; }
+.footer { grid-area: footer; }</code></pre>
+          <p>Las áreas permiten diseñar plantillas con nombres claros.</p>
+        </article>
+      </section>
+
+      <section id="animaciones">
+        <h2 class="section-title">Transiciones, transformaciones y animaciones</h2>
+        <article class="card large-card">
+          <h3>Transformaciones</h3>
+          <p>Las transformaciones modifican la forma de un elemento sin afectar el resto del flujo.</p>
+          <pre><code>.tarjeta {
+  transform: translateX(20px) scale(1.05) rotate(2deg);
+}</code></pre>
+          <ul>
+            <li><strong>translate</strong>: mueve el elemento.</li>
+            <li><strong>scale</strong>: agranda o reduce.</li>
+            <li><strong>rotate</strong>: rota.</li>
+            <li><strong>skew</strong>: inclina.</li>
+          </ul>
+
+          <h3>Transiciones</h3>
+          <p>Las transiciones animan los cambios de propiedad cuando cambian de estado.</p>
+          <pre><code>.boton {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton:hover {
+  background-color: #2563eb;
+  transform: translateY(-3px);
+}</code></pre>
+
+          <h3>Animaciones</h3>
+          <p>Las animaciones con <code>@keyframes</code> definen etapas y luego se aplican con <code>animation</code>.</p>
+          <pre><code>@keyframes aparecer {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  animation: aparecer 0.6s ease forwards;
+}</code></pre>
+          <p>Las animaciones pueden repetirse con <code>infinite</code> o tener retrasos con <code>animation-delay</code>.</p>
+        </article>
+      </section>
+
+      <section id="responsive">
+        <h2 class="section-title">Responsive y adaptabilidad</h2>
+        <article class="card large-card">
+          <p>Diseño responsivo permite que las páginas funcionen bien en pantallas pequeñas y grandes.</p>
+          <h3>Unidades relativas</h3>
+          <ul>
+            <li><strong>rem</strong>: relativo al tamaño de la fuente raíz.</li>
+            <li><strong>em</strong>: relativo al tamaño de la fuente del elemento.</li>
+            <li><strong>vw</strong> y <strong>vh</strong>: porcentaje del ancho y alto de la ventana.</li>
+          </ul>
+          <h3>Media queries</h3>
+          <pre><code>@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+}</code></pre>
+          <p>La estrategia móvil primero usa estilos base para móviles y luego aplica reglas para pantallas más grandes.</p>
+          <h3>Fluid layout</h3>
+          <p>Combina <code>minmax()</code>, <code>clamp()</code> y porcentajes para que los diseños se adapten de forma natural.</p>
+        </article>
+      </section>
+
+      <section id="actividades">
+        <h2 class="section-title">Actividades del módulo</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>En clase</h3>
+            <ul>
+              <li>Crear estilos para títulos, párrafos y botones.</li>
+              <li>Aplicar clases a varios elementos.</li>
+              <li>Diseñar una tarjeta con borde, sombra y padding.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Para la casa</h3>
+            <ul>
+              <li>Estilizar una página HTML completa.</li>
+              <li>Aplicar Flexbox o Grid a una sección.</li>
+              <li>Hacer que la página se vea bien en móvil y escritorio.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Proyecto</h3>
+            <ul>
+              <li>Diseñar una landing page con estructura clara y estilo profesional.</li>
+              <li>Usar colores, tipografía y espaciado de forma coherente.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>CSS: el lenguaje del estilo para convertir contenido en experiencias visuales.</p>
+    </footer>
+  </body>
+</html>

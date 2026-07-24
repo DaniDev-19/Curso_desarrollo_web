@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las Bases del Desarrollo Web - Con Jesús Daniel</title>
+    <style>
+        :root {
+            --primary: #5227ca;
+            --primary-light: #8b5cf6;
+            --bg-dark: #0d0d0d;
+            --bg-card: #141414;
+            --text-main: #e5e5e5;
+            --text-muted: #aaaaaa;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* HEADER & HERO */
+        header {
+            background-color: #020202;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 30px rgba(82, 39, 202, 0.25);
+            border-bottom: 2px solid var(--primary);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.6rem;
+            background: linear-gradient(90deg, #ffffff, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .motto-banner {
+            background: linear-gradient(135deg, #1b0e3d, #020202);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px dashed rgba(82, 39, 202, 0.4);
+        }
+
+        .motto-banner h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        .motto-banner span {
+            color: var(--primary-light);
+            text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+        }
+
+        /* NAVEGACIÓN RÁPIDA INTERNA */
+        nav {
+            max-width: 1200px;
+            margin: 20px auto 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            background: var(--bg-card);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: 1px solid rgba(82, 39, 202, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: var(--primary);
+            box-shadow: 0 0 15px rgba(82, 39, 202, 0.4);
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* SECCIONES Y TARJETAS */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #ffffff;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(82, 39, 202, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(82, 39, 202, 0.4);
+            box-shadow: 0 10px 30px rgba(82, 39, 202, 0.1);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary-light);
+            font-size: 1.4rem;
+        }
+
+        /* ELEMENTOS EDUCATIVOS */
+        .metaphor {
+            background: rgba(82, 39, 202, 0.1);
+            border-left: 4px solid var(--primary-light);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        .challenge-box {
+            background: #1a1005;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+        }
+
+        .challenge-box h4 {
+            margin: 0 0 10px 0;
+            color: #f59e0b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* PASOS VISUALES DEL PROTOCOLO */
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .flow-step {
+            background: #1c1c1c;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #10b981;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .step-num {
+            background: #10b981;
+            color: #000;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #020202;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 2px solid var(--primary);
+            box-shadow: 0 -10px 35px rgba(82, 39, 202, 0.15);
+        }
+
+        footer p {
+            margin: 5px 0;
+            color: var(--text-muted);
+        }
+
+        .footer-links a {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 900px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado principal del curso -->
+    <header>
+        <h1>Fundamentos del Desarrollo Web</h1>
+    </header>
+
+    <!-- El lema del profesor Jesús como estandarte del curso -->
+    <div class="motto-banner">
+        <h2>✨ "Aprende Creando, <span>Crea Aprendiendo</span>" ✨</h2>
+    </div>
+
+    <!-- Navegación para saltar entre las lecciones de la clase -->
+    <nav>
+        <a href="#internet">1. ¿Cómo viajan los datos?</a>
+        <a href="#protocolos">2. El Mensajero HTTP</a>
+        <a href="#dom">3. ¿Qué es el DOM?</a>
+        <a href="#html-history">4. Historia de HTML</a>
+        <a href="#html-anatomy">5. Estructura de HTML</a>
+    </nav>
+    
+    <main>
+
+        <!-- SECCIÓN 1: INTERNET Y IMPORTANCIA DE LAS BASES -->
+        <section id="internet">
+            <h2 class="section-title">1. ¿Por qué importan las bases y cómo viajan los datos?</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>La diferencia entre un Programador y un Copiador</h3>
+                    <p>Cualquiera puede memorizar una etiqueta de código o pedirle a una Inteligencia Artificial que escriba una estructura, pero un verdadero <strong>Ingeniero de Software</strong> entiende qué pasa tras bambalinas.</p>
+                    <p>Saber las bases enciende tu <strong>imaginación técnica</strong>: te permite encontrar errores rápido, crear arquitecturas limpias y entender cómo el navegador dibuja tus ideas en pantallas de todo el mundo.</p>
+                </div>
+                <div class="card">
+                    <h3>¿Cómo viajan los datos por el mundo? 🌍</h3>
+                    <div class="metaphor">
+                        <strong>Metáfora:</strong> Imagina que tu página web es un rompecabezas gigante. No puedes mandar la caja armada por correo. Tienes que desarmarla, meter las piezas en sobres pequeños y mandarlas por diferentes caminos.
+                    </div>
+                    <p>Cuando entras a una web, tu computadora pide los archivos a un servidor lejano. Esos archivos se dividen en millones de fragmentos llamados <strong>Paquetes de Datos</strong>, viajan por cables submarinos bajo el océano y se arman en tu pantalla en milisegundos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: PROTOCOLOS HTTP -->
+        <section id="protocolos">
+            <h2 class="section-title">2. El Mensajero de la Web: El Protocolo HTTP</h2>
+            <div class="card">
+                <h3>¿Qué es HTTP? (HyperText Transfer Protocol)</h3>
+                <p>Es el idioma oficial que usan las computadoras en Internet para hablar entre sí. Funciona bajo un esquema muy sencillo: <strong>Cliente (Petición) y Servidor (Respuesta)</strong>.</p>
+                
+                <div class="metaphor">
+                    <strong>Metáfora:</strong> Es exactamente como ir a un restaurante. Tú eres el Cliente, el mesonero es el protocolo HTTP y la cocina es el Servidor. Tú le pides una hamburguesa (Petición/Request) y el mesonero va a la cocina y te la trae (Respuesta/Response).
+                </div>
+
+                <h4>La Ruta de una Petición Web:</h4>
+                <div class="flow-container">
+                    <div class="flow-step">
+                        <div class="step-num">1</div>
+                        <div><strong>Request (Petición):</strong> Escribes una URL en el navegador. Tu computadora le grita al servidor remoto: <em>"¡Oye! Por favor envíame el archivo index.html"</em>.</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="step-num">2</div>
+                        <div><strong>Procesamiento backend:</strong> El servidor recibe el mensaje, busca el archivo en sus carpetas o base de datos.</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="step-num">3</div>
+                <!-- CONTINUACIÓN DE LA SECCIÓN 1 -->
+                <div class="card">
+                    <h3>¿Cómo se transporta la información por el mundo?</h3>
+                    <div class="metaphor">
+                        <strong>Metáfora:</strong> Imagina que tu página web es un rompecabezas gigante. No puedes enviarlo completamente armado por correo porque la caja es muy grande. Tienes que desarmarlo, meter las piezas en sobres individuales muy pequeños y mandarlas por diferentes caminos.
+                    </div>
+                    <p>Al acceder a una dirección web, la interfaz se fragmenta en millones de bloques pequeños llamados <strong>Paquetes de Datos</strong>. Estos paquetes viajan por cables de fibra óptica submarinos bajo el océano y se reensamblan en la pantalla del dispositivo en milisegundos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: PROTOCOLOS HTTP -->
+        <section id="protocolos">
+            <h2 class="section-title">2. El Mensajero de la Web: El Protocolo HTTP</h2>
+            <div class="card">
+                <h3>¿Qué es HTTP? (HyperText Transfer Protocol)</h3>
+                <p>Es el protocolo o conjunto de reglas estándar que utilizan los equipos en una red informática para comunicarse. Opera bajo un modelo transaccional denominado <strong>Cliente-Servidor</strong>.</p>
+                
+                <div class="metaphor">
+                    <strong>Metáfora:</strong> Funciona exactamente igual que ordenar comida en un restaurante. Tú eres el Cliente, el mesero es el protocolo HTTP y la cocina del restaurante es el Servidor. Tú realizas un pedido de comida (Petición/Request), el mesero lleva el mensaje a la cocina y luego regresa a tu mesa con el plato servido (Respuesta/Response).
+                </div>
+
+                <h4>El Flujo de una Petición Web Paso a Paso:</h4>
+                <div class="flow-container">
+                    <div class="flow-step">
+                        <div class="step-num">1</div>
+                        <div><strong>Petición (Request):</strong> El cliente introduce una URL en el navegador. El equipo envía un mensaje al servidor solicitando un documento específico: <em>"Por favor, envíame el archivo index.html"</em>.</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="step-num">2</div>
+                        <div><strong>Procesamiento:</strong> El servidor procesa la solicitud entrante, inspecciona sus directorios de almacenamiento y prepara los componentes del archivo solicitado.</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="step-num">3</div>
+                        <div><strong>Respuesta (Response):</strong> El servidor retorna un código de estado (como un <em>200 OK</em> si la operación fue exitosa, o un <em>404 Not Found</em> si el recurso no existe) y adjunta los códigos estructurados de la página.</div>
+                    </div>
+                </div>
+
+                <div class="challenge-box">
+                    <h4>💡 Reto de Lógica Colectiva:</h4>
+                    <p>Analicemos en grupo: ¿Qué sucedería si el mesero (HTTP) confunde la orden o si la cocina (Servidor) colapsa debido a demasiados pedidos simultáneos? ¡Esa es exactamente la razón por la cual se caen las plataformas de videojuegos o las aplicaciones como Discord cuando se saturan!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: EL DOM -->
+        <section id="dom">
+            <h2 class="section-title">3. El Esquema Estructural de la Web: El DOM</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>¿Qué es el Document Object Model (DOM)?</h3>
+                    <p>Cuando el navegador web culmina la descarga de los datos en texto plano a través de HTTP, no puede renderizarlos directamente en pantalla. Requiere convertirlos en un modelo de objetos estructurado en forma de ramificaciones denominado <strong>DOM</strong>.</p>
+                    <p>En este ecosistema, cada etiqueta de marcado se convierte en un nodo lógico e independiente que posee herencias jerárquicas directas (elementos padres, elementos hijos y elementos hermanos).</p>
+                </div>
+                <div class="card">
+                    <h3>La Metáfora del Árbol Familiar</h3>
+                    <div class="metaphor">
+                        <strong>Para Todos los Alumnos:</strong> Podemos visualizar el DOM como un árbol genealógico familiar. La raíz absoluta es el nodo <code>&lt;html&gt;</code> (El Abuelo). Este elemento genera dos hijos directos que son hermanos entre sí: el contenedor <code>&lt;head&gt;</code> y el contenedor <code>&lt;body&gt;</code>. El cuerpo, a su vez, da vida a sus propios hijos como títulos <code>&lt;h1&gt;</code> y bloques de texto <code>&lt;p&gt;</code>.
+                    </div>
+                    <p>Comprender esta jerarquía de nodos es vital para el futuro. Al avanzar en tu carrera técnica, utilizarás lenguajes de programación como JavaScript para alterar, inyectar o eliminar estas ramas del árbol en tiempo real y sin recargar la página.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: HISTORIA DE HTML -->
+        <section id="html-history">
+            <h2 class="section-title">4. Historia de HTML: El Origen de los Documentos Conectados</h2>
+            <div class="card">
+                <h3>El Origen Científico: Tim Berners-Lee (1991)</h3>
+                <p>El lenguaje HTML no fue desarrollado originalmente para diseñar plataformas multimedia ni aplicaciones comerciales. Fue concebido en las instalaciones del laboratorio de física nuclear CERN en Suiza. Un científico llamado <strong>Tim Berners-Lee</strong> ideó un mecanismo informático para enlazar y consultar reportes de investigación entre computadoras académicas sin trasladar documentos físicos.</p>
+                <p>El estándar se denominó <strong>HyperText Markup Language (Lenguaje de Marcado de Hipertexto)</strong> debido a su capacidad de conectar múltiples textos mediante vínculos dinámicos.</p>
+                
+                <div class="metaphor">
+                    <strong>Aclaratoria Técnica Crucial:</strong> Es mandatorio comprender que HTML <strong>NO</strong> es un lenguaje de programación. Carece de estructuras lógicas condicionales, bucles iterativos o capacidades de cálculo matemático. Es un lenguaje de marcado encargado exclusivamente de definir la semántica y la arquitectura estructural del contenido.
+                </div>
+
+                <h4>La Consolidación con HTML5:</h4>
+                <p>Las primeras especificaciones de HTML carecían de dinamismo y se limitaban a documentos planos de texto. En el año 2014 se estandarizó de forma global la especificación <strong>HTML5</strong>, transformando la industria informática al incorporar etiquetas nativas de audio, video y elementos semánticos de alta fidelidad que eliminaron la dependencia de complementos de software externos.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: ANATOMÍA DE HTML -->
+        <section id="html-anatomy">
+            <h2 class="section-title">5. Anatomía Estructural de una Etiqueta HTML</h2>
+            <div class="card">
+                <h3>¿Cómo se compone el código de maquetación?</h3>
+                <p>Para indicarle al navegador la naturaleza de un contenido, envolvemos los textos utilizando etiquetas delimitadas por operadores de menor que y mayor que. La gran mayoría trabaja en pares simétricos (Apertura y Cierre):</p>
+                
+                <!-- Diagrama explicativo de código limpio -->
+                <div class="code-anatomy">
+                    &lt;<span class="code-tag">p</span> <span class="code-attr">class</span>="<span class="code-val">texto-morado</span>"&gt;<span class="code-text">¡Hola Mundo!</span>&lt;/<span class="code-tag">p</span>&gt;
+                </div>
+
+                <ul>
+                    <li><strong>Etiqueta de Apertura (<code>&lt;p&gt;</code>):</strong> Determina el punto exacto donde inicia un nodo de contenido (en este ejemplo, la apertura de un párrafo estándar).</li>
+                    <li><strong>Atributo Técnico (<code>class</code>):</strong> Provee propiedades de configuración adicionales a la etiqueta informática. Sirve como el puente de enlace para que las hojas de estilo CSS localicen la caja y la estilicen.</li>
+                    <li><strong>Contenido Central (<code>¡Hola Mundo!</code>):</strong> Representa el flujo de información textual o gráfica real que será renderizado visualmente para el usuario final en la interfaz.</li>
+                    <li><strong>Etiqueta de Cierre (<code>&lt;/p&gt;</code>):</strong> Incorpora una barra diagonal regulatoria e indispensable. Su función es notificar al intérprete del navegador que el procesamiento de ese objeto ha concluido.</li>
+                </ul>
+
+                <div class="challenge-box">
+                    <h4>🚀 Proyecto de Cierre Práctico: Tu Bloque Personal en el DOM</h4>
+                    <p>Guiados por nuestra filosofía de diseño <strong>"Aprende Creando, Crea Aprendiendo"</strong>, cada estudiante tomará el control del editor de código para estructurar su primera tarjeta de presentación digital. Utilizaremos selectores semánticos para maquetar sus nombres de usuario, enlaces de interés y una imagen de perfil adaptativa.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Institucional de tu marca educativa -->
+    <footer>
+        <p>&copy; 2026 Jesús Daniel Perdomo Ramírez • Ingeniero de Software</p>
+        <p>Material de inducción técnica desarrollado para la enseñanza de maquetación, arquitectura web y diseño de interfaces.</p>
+        <div class="footer-links">

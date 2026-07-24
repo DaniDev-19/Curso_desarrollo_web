@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Culebrita - Juego</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <h1>Culebrita</h1>
+      <p>Usa las flechas o WASD para mover la serpiente. Come la comida, evita chocar contra paredes y tu propio cuerpo.</p>
+    </header>
+
+    <section class="game-panel">
+      <div class="score-panel">
+        <div>Puntuación: <span id="score">0</span></div>
+        <button id="startButton" type="button">Iniciar / Reiniciar</button>
+      </div>
+      <div class="canvas-wrapper">
+        <canvas id="gameCanvas" width="400" height="400" aria-label="Canvas del juego de la culebrita"></canvas>
+      </div>
+      <p class="instructions">Flechas / WASD para mover. La velocidad aumenta con cada comida.</p>
+    </section>
+  </main>
+
+  <script src="actions.js"></script>
+</body>
+</html>

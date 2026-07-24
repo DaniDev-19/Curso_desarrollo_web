@@ -1,0 +1,143 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #475569;
+  --primary: #2563eb;
+  --border: #d1d5db;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.page-header {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 1rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.subtitle {
+  margin-top: 0.75rem;
+  color: var(--muted);
+}
+
+.instructions,
+.controls,
+.page-footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+.instructions h2 {
+  margin-top: 0;
+}
+
+.instructions ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.controls label {
+  font-weight: 600;
+}
+
+#categoria {
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: white;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 2rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.card img,
+.card picture {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 1.3rem;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.card p {
+  margin: 0.75rem 0;
+  color: var(--muted);
+}
+
+.card .price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.tag {
+  display: inline-flex;
+  padding: 0.3rem 0.7rem;
+  border-radius: 9999px;
+  background: #e0e7ff;
+  color: #1d4ed8;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.no-data {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--muted);
+}
+
+.page-footer {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  .controls {
+    justify-content: stretch;
+  }
+}

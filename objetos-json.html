@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explicación completa sobre objetos, JSON y su uso en JavaScript." />
+    <title>Objetos, JSON y datos en JavaScript</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <p class="eyebrow">Módulo 3 · Datos y estructuras</p>
+      <h1>Objetos, JSON y manejo de datos</h1>
+      <p class="lead">
+        En JavaScript, los objetos permiten organizar información en estructuras claras y reutilizables.
+        El JSON es un formato estándar para intercambiar datos entre sistemas y aplicaciones web.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#objetos">Objetos</a>
+        <a class="btn btn-secondary" href="#json">JSON</a>
+      </div>
+    </header>
+
+    <nav class="top-nav" aria-label="Navegación de objetos y JSON">
+      <a href="#objetos">Objetos</a>
+      <a href="#json">JSON</a>
+      <a href="#fetch">Fetch</a>
+    </nav>
+
+    <main>
+      <section id="objetos" class="intro-grid">
+        <article class="card">
+          <h2>¿Qué es un objeto?</h2>
+          <p>
+            Un objeto es una colección de propiedades y métodos. Permite agrupar información relacionada en una sola unidad.
+          </p>
+          <pre><code>const persona = {
+  nombre: 'Ana',
+  edad: 20,
+  saludar() {
+    console.log('Hola');
+  }
+};</code></pre>
+        </article>
+
+        <article class="card">
+          <h2>Propiedades y métodos</h2>
+          <p>
+            Las propiedades guardan valores, mientras que los métodos ejecutan acciones.
+          </p>
+          <pre><code>console.log(persona.nombre);
+persona.saludar();</code></pre>
+        </article>
+      </section>
+
+      <section>
+        <h2 class="section-title">Objetos y acceso a datos</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Acceso con punto</h3>
+            <pre><code>console.log(persona.edad);</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Acceso con corchetes</h3>
+            <pre><code>console.log(persona['nombre']);</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Modificar propiedades</h3>
+            <pre><code>persona.edad = 21;</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section id="json">
+        <h2 class="section-title">¿Qué es JSON?</h2>
+        <article class="card large-card">
+          <p>
+            JSON significa JavaScript Object Notation. Es un formato de texto ligero usado para representar datos.
+            Se utiliza muchísimo para enviar y recibir información entre un servidor y una página web.
+          </p>
+          <pre><code>{
+  "nombre": "Carlos",
+  "edad": 25,
+  "activo": true
+}</code></pre>
+          <div class="tip-box">
+            JSON usa comillas dobles para las claves y valores de texto, y puede contener cadenas, números, booleanos, arreglos u objetos.
+          </div>
+        </article>
+      </section>
+
+      <section id="fetch">
+        <h2 class="section-title">Fetch y peticiones HTTP</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>¿Qué es fetch?</h3>
+            <p>
+              Fetch permite realizar peticiones a un servidor desde JavaScript. Es la base para obtener datos de una API.
+            </p>
+            <pre><code>fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then(res => res.json())
+  .then(data => console.log(data));</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>¿Por qué se usan?</h3>
+            <p>
+              Gracias a fetch una página puede cargar información en tiempo real sin recargar toda la página.
+              Esto es muy útil en aplicaciones modernas.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Flujo de una petición</h3>
+            <ul>
+              <li>Se realiza una petición al servidor.</li>
+              <li>El servidor responde con datos.</li>
+              <li>JavaScript convierte esa respuesta a JSON.</li>
+              <li>Los datos se muestran o se procesan.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Objetos, JSON y fetch: herramientas esenciales para trabajar con datos en la web.</p>
+    </footer>
+  </body>
+</html>

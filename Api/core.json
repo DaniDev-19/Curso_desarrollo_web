@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "nombre": "Cámara web HD",
+    "categoria": "Electrónica",
+    "precio": 49.99,
+    "disponible": true,
+    "imagen": "https://via.placeholder.com/600x360?text=Cámara+Web"
+  },
+  {
+    "id": 2,
+    "nombre": "Auriculares inalámbricos",
+    "categoria": "Audio",
+    "precio": 79.9,
+    "disponible": false,
+    "imagen": "https://via.placeholder.com/600x360?text=Auriculares"
+  },
+  {
+    "id": 3,
+    "nombre": "Lámpara de escritorio",
+    "categoria": "Hogar",
+    "precio": 34.5,
+    "disponible": true,
+    "imagen": "https://via.placeholder.com/600x360?text=Lámpara"
+  },
+  {
+    "id": 4,
+    "nombre": "Reloj deportivo",
+    "categoria": "Deportes",
+    "precio": 59.99,
+    "disponible": true,
+    "imagen": "https://via.placeholder.com/600x360?text=Reloj"
+  }
+]

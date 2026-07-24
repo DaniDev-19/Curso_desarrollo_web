@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación - Curso HTML/CSS</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #0d0d0d;
+            color: #e5e5e5;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #020202;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 30px rgba(82, 39, 202, 0.15); /* Sombra morada sutil */
+            border-bottom: 1px solid rgba(82, 39, 202, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #fff, #5227ca);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hello-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .content-one {
+            flex: 1.8;
+        }
+
+        .content-one h3 {
+            color: #ffffff;
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .content-one p {
+            margin-bottom: 15px;
+            color: #cccccc;
+        }
+
+        .content-one strong {
+            color: #ffffff;
+            border-bottom: 1px dashed #5227ca;
+        }
+
+        .content-two {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-box {
+            position: relative;
+            padding: 8px;
+            background: #141414;
+            border-radius: 100%;
+            box-shadow: 0 0 40px rgba(82, 39, 202, 0.25);
+            border: 1px solid rgba(82, 39, 202, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-box:hover {
+            transform: scale(1.03);
+        }
+
+        .profile-box img {
+            display: block;
+            border-radius: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .content-three {
+            flex: 1.2;
+            background: #141414;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #5227ca;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .content-three p {
+            margin: 0;
+            color: #bbbbbb;
+        }
+
+        footer {
+            background-color: #020202;
+            margin-top: 60px;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #888888;
+            border-top: 1px solid rgba(60, 13, 93, 0.348);
+            box-shadow: 0 -4px 30px rgba(60, 13, 93, 0.15); /* Sombra hacia arriba */
+        }
+
+        footer a {
+            color: #5227ca;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                gap: 50px;
+                text-align: center;
+            }
+            .content-three {
+                border-left: none;
+                border-top: 4px solid #5227ca;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Presentación - HTML Curso</h1>
+    </header>
+    
+    <main>
+        <div class="hello-section">
+            <h3>Hola, estudiantes. Soy Jesús Daniel. Me gustaría presentarme!</h3>
+        </div>        
+
+        <div class="container">
+            <!-- Bloque 1: Introducción -->
+            <section class="content-one">
+                <p>
+                    Soy un <strong>Software Engineer</strong> y <strong>Backend Developer</strong>. Tengo experiencia en la construcción de aplicaciones web y móviles, trabajando con lenguajes como JavaScript, TypeScript, Python, PHP y C#.
+                </p>
+                <p>
+                    Me especializo en frameworks modernos incluyendo React, Astro, Next.js, Node.js, Express, Nest.js, Laravel, .NET y FastAPI.
+                </p>
+                <p>
+                    Mi objetivo es construir aplicaciones innovadoras para la sociedad. Soy apasionado por la tecnología y siempre busco nuevos desafíos para aprender y crecer profesionalmente.
+                </p>
+            </section>
+
+            <!-- Bloque 2: Foto de Perfil con efecto de profundidad -->
+            <div class="content-two">
+                <div class="profile-box">
+                    <picture>
+                        <source srcset="./public/jesus daniel.png" type="image/png">
+                        <img src="../public/jesus daniel.png" alt="Jesus Daniel Perdomo" width="220" height="220" loading="lazy">
+                    </picture>
+                </div>
+            </div>
+
+            <!-- Bloque 3: Experiencia Destacada -->
+            <section class="content-three">
+                <p>
+                    <strong>Mi Experiencia:</strong><br><br>
+                    Mi background profesional incluye roles impactantes en <strong>Span Autopartes-Toyota</strong>, <strong>Planta de Autobuses Yutong Venezuela</strong>,En <strong>Bolivariana de Aeropuertos (Baer)</strong> en Yaracuy, y el <strong>Instituto Nacional de Salud Agrícola (INSAI)</strong>.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Corporativo / Educativo -->
+    <footer>
+        <p>&copy; 2026 Jesus Daniel Perdomo. Desarrollado para el Curso Práctico de HTML & CSS & JavaScript.</p>
+        <p>¿Quieres ver más proyectos? Visita mi perfil de<a href="https://github.com/DaniDev-19" target="_blank" rel="noopener noreferrer"> GitHub</a></p>
+        <p>¿Quieres saber mas de mi? Visita mi<a href="https://danijdev.zymtaxis.com/" target="_blank" rel="noopener noreferrer"> Pagina Web</a></p>
+        <span>Gracias de antemano por visitar mi sitio</span>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Introducción a JavaScript para dar comportamiento e interacción a las páginas web." />
+    <title>Curso de JavaScript para estudiantes</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <p class="eyebrow">Módulo 3 · Interacción web</p>
+      <h1>JavaScript: darle vida a la web</h1>
+      <p class="lead">
+        JavaScript es el lenguaje que permite crear lógica, interacción y comportamiento dinámico.
+        Con él, una página puede responder a clics, mostrar mensajes, validar formularios y modificar contenido en tiempo real.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#basico">Ver conceptos</a>
+        <a class="btn btn-secondary" href="#actividades">Actividades</a>
+      </div>
+    </header>
+
+    <nav class="top-nav" aria-label="Navegación del curso de JavaScript">
+      <a href="#basico">Básico</a>
+      <a href="#variables">Variables</a>
+      <a href="#funciones">Funciones</a>
+      <a href="#dom-js">DOM</a>
+      <a href="#media-js">Media</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#objetos">Objetos</a>
+      <a href="#operadores">Operadores</a>
+      <a href="#http">HTTP</a>
+      <a href="#dom-avanzado">DOM avanzado</a>
+      <a href="#plantillas">Plantillas</a>
+      <a href="#math">Math</a>
+      <a href="#fetch">Fetch</a>
+      <a href="#almacenamiento">Almacenamiento</a>
+      <a href="#actividades">Actividades</a>
+    </nav>
+
+    <main>
+      <section id="basico" class="intro-grid">
+        <article class="card">
+          <h2>¿Qué es JavaScript?</h2>
+          <p>
+            JavaScript es un lenguaje de programación que permite ejecutar instrucciones, procesar datos y cambiar el comportamiento de una página.
+          </p>
+          <div class="tip-box">
+            A diferencia de HTML y CSS, JavaScript sí permite crear lógica y decisiones automáticas.
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Variables y funciones</h2>
+          <pre><code>let nombre = "Ana";
+function saludar() {
+  console.log("Hola " + nombre);
+}</code></pre>
+        </article>
+      </section>
+
+      <section id="variables">
+        <h2 class="section-title">Variables, tipos de datos y operadores</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Variables</h3>
+            <p>JavaScript permite declarar variables con <code>var</code>, <code>let</code> y <code>const</code>.</p>
+            <pre><code>let edad = 18;
+const nombre = "Luis";
+var activo = true;</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Tipos de datos</h3>
+            <ul>
+              <li>String: textos</li>
+              <li>Number: números</li>
+              <li>Boolean: verdadero o falso</li>
+              <li>Null: valor vacío intencional</li>
+              <li>Undefined: sin valor</li>
+              <li>Object: estructuras complejas</li>
+              <li>Array: listas de datos</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Operadores</h3>
+            <pre><code>let suma = 2 + 3;
+let resta = 10 - 4;
+let comparacion = 5 === 5;</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section id="funciones">
+        <h2 class="section-title">Funciones y tipos de funciones</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Funciones declaradas</h3>
+            <pre><code>function saludar() {
+  console.log('Hola');
+}</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Funciones anónimas y flecha</h3>
+            <pre><code>const sumar = (a, b) => a + b;
+const mensaje = function() { return 'Hola'; };</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Funciones de orden superior</h3>
+            <p>Son funciones que reciben otras funciones como parámetros o devuelven funciones.</p>
+            <pre><code>const numeros = [1, 2, 3];
+const duplicados = numeros.map(n => n * 2);</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section id="dom-js">
+        <h2 class="section-title">JavaScript y el DOM</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Modificar contenido</h3>
+            <pre><code>document.querySelector("h1").textContent = "Nuevo título";</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Agregar interacción</h3>
+            <pre><code>document.querySelector("button").addEventListener("click", () => {
+  alert("¡Hola!");
+});</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>¿Cómo reconoce el DOM a JavaScript?</h3>
+            <p>El navegador analiza el HTML, construye el DOM y ejecuta los scripts. Cuando encuentra un archivo JavaScript, lo interpreta y luego puede modificar nodos del árbol.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="media-js">
+        <h2 class="section-title">Insertar imágenes y videos con JavaScript</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Agregar una imagen dinámica</h3>
+            <p>JavaScript puede crear un elemento <code>img</code> y agregarlo al DOM.</p>
+            <pre><code>const imagen = document.createElement('img');
+imagen.src = 'foto-webp.webp';
+imagen.alt = 'Paisaje en formato WebP';
+imagen.width = 600;
+document.querySelector('#galeria').appendChild(imagen);</code></pre>
+            <p>Esto es útil cuando la imagen depende de una selección del usuario o de datos recibidos por API.</p>
+          </article>
+
+          <article class="card">
+            <h3>Agregar un video dinámico</h3>
+            <p>También se puede crear un elemento <code>video</code> y añadir varias fuentes de video.</p>
+            <pre><code>const video = document.createElement('video');
+video.controls = true;
+video.width = 640;
+const sourceMp4 = document.createElement('source');
+sourceMp4.src = 'video.mp4';
+sourceMp4.type = 'video/mp4';
+const sourceWebm = document.createElement('source');
+sourceWebm.src = 'video.webm';
+sourceWebm.type = 'video/webm';
+video.appendChild(sourceMp4);
+video.appendChild(sourceWebm);
+document.querySelector('#videos').appendChild(video);</code></pre>
+            <p>El navegador selecciona la primera fuente compatible que pueda reproducir.</p>
+          </article>
+
+          <article class="card">
+            <h3>Insertar con <code>innerHTML</code></h3>
+            <p>Si necesitas añadir varios elementos a la vez, puedes usar <code>innerHTML</code> con código HTML.</p>
+            <pre><code>const contenedor = document.querySelector('#media');
+contenedor.innerHTML = `
+  &lt;img src="avatar.png" alt="Avatar"&gt;
+  &lt;video controls width="320"&gt;
+    &lt;source src="clip.mp4" type="video/mp4"&gt;
+  &lt;/video&gt;
+`;</code></pre>
+            <p>Usa esta técnica con cuidado si el contenido viene de usuarios para evitar riesgos de seguridad.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="eventos">
+        <h2 class="section-title">Eventos y flujo de ejecución</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Eventos comunes</h3>
+            <ul>
+              <li>click</li>
+              <li>submit</li>
+              <li>input</li>
+              <li>change</li>
+              <li>mouseover</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Cómo funciona el flujo</h3>
+            <p>Un evento ocurre cuando el usuario interactúa. JavaScript escucha ese evento y ejecuta una función.</p>
+            <pre><code>document.addEventListener('click', () => {
+  console.log('Se hizo clic');
+});</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Renderización</h3>
+            <p>HTML crea la estructura, CSS define la apariencia y JavaScript agrega el comportamiento. El navegador renderiza todo como una interfaz visual.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="objetos">
+        <h2 class="section-title">Objetos, arreglos y JSON</h2>
+        <article class="card large-card">
+          <p>Los objetos agrupan datos relacionados. Los arreglos almacenan listas. JSON es un formato de intercambio de datos muy usado en APIs.</p>
+          <pre><code>const producto = {
+  nombre: 'Laptop',
+  precio: 1200,
+  disponible: true
+};
+
+const colores = ['rojo', 'azul', 'verde'];</code></pre>
+          <div class="tip-box">
+            Para una explicación más detallada entra a <a href="objetos-json.html" style="color:#7dd3fc;">Objetos, JSON y datos</a>.
+          </div>
+        </article>
+      </section>
+
+      <section>
+        <h2 class="section-title">Propiedades y métodos esenciales de JavaScript</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Cadenas de texto</h3>
+            <ul>
+              <li><strong>toLowerCase()</strong>: convierte a minúsculas. Ejemplo: <code>"Hola".toLowerCase()</code>.</li>
+              <li><strong>toUpperCase()</strong>: convierte a mayúsculas. Ejemplo: <code>"hola".toUpperCase()</code>.</li>
+              <li><strong>trim()</strong>: elimina espacios al inicio y final. Ejemplo: <code>" hola ".trim()</code>.</li>
+              <li><strong>includes()</strong>: verifica si una cadena contiene un valor. Ejemplo: <code>"JavaScript".includes("Script")</code>.</li>
+              <li><strong>slice()</strong>: extrae una parte de la cadena. Ejemplo: <code>"programar".slice(0, 4)</code>.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Arreglos</h3>
+            <ul>
+              <li><strong>push()</strong>: añade un elemento al final. Ejemplo: <code>frutas.push("mango")</code>.</li>
+              <li><strong>pop()</strong>: elimina el último elemento. Ejemplo: <code>frutas.pop()</code>.</li>
+              <li><strong>shift()</strong>: elimina el primer elemento. Ejemplo: <code>frutas.shift()</code>.</li>
+              <li><strong>unshift()</strong>: añade un elemento al inicio. Ejemplo: <code>frutas.unshift("pera")</code>.</li>
+              <li><strong>map()</strong>: transforma cada elemento. Ejemplo: <code>numeros.map(n => n * 2)</code>.</li>
+              <li><strong>filter()</strong>: filtra elementos según una condición. Ejemplo: <code>numeros.filter(n => n > 2)</code>.</li>
+              <li><strong>find()</strong>: devuelve el primer elemento que cumple la condición. Ejemplo: <code>numeros.find(n => n > 2)</code>.</li>
+              <li><strong>length</strong>: devuelve la cantidad de elementos. Ejemplo: <code>frutas.length</code>.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Objetos y eventos</h3>
+            <ul>
+              <li><strong>Object.keys()</strong>: devuelve las propiedades del objeto. Ejemplo: <code>Object.keys(producto)</code>.</li>
+              <li><strong>Object.values()</strong>: devuelve los valores del objeto. Ejemplo: <code>Object.values(producto)</code>.</li>
+              <li><strong>addEventListener()</strong>: escucha eventos del usuario. Ejemplo: <code>boton.addEventListener('click', hacerAlgo)</code>.</li>
+              <li><strong>classList.add()</strong>: agrega clases CSS a un elemento. Ejemplo: <code>elemento.classList.add('activo')</code>.</li>
+              <li><strong>classList.remove()</strong>: elimina clases CSS. Ejemplo: <code>elemento.classList.remove('activo')</code>.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="operadores">
+        <h2 class="section-title">Operadores lógicos, consola, texto en HTML, clases y ids</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Operadores lógicos</h3>
+            <p>Los operadores lógicos permiten combinar condiciones y tomar decisiones.</p>
+            <ul>
+              <li><strong>&&</strong> (AND): se usa cuando deben cumplirse dos o más condiciones. Ejemplo: <code>edad >= 18 && tieneDni</code>.</li>
+              <li><strong>||</strong> (OR): se usa cuando basta con que una condición sea verdadera. Ejemplo: <code>esEstudiante || esDocente</code>.</li>
+              <li><strong>!</strong> (NOT): niega una condición. Ejemplo: <code>!estaActivo</code>.</li>
+            </ul>
+            <pre><code>if (edad >= 18 && tieneDni) {
+  console.log('Puede entrar');
+}</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Tipos de console.log</h3>
+            <p>La consola sirve para depurar y mostrar información mientras el programa se ejecuta.</p>
+            <ul>
+              <li><strong>console.log()</strong>: muestra información general.</li>
+              <li><strong>console.warn()</strong>: muestra advertencias.</li>
+              <li><strong>console.error()</strong>: muestra errores.</li>
+              <li><strong>console.info()</strong>: muestra información importante.</li>
+              <li><strong>console.table()</strong>: muestra datos en forma de tabla.</li>
+            </ul>
+            <pre><code>console.log('Mensaje normal');
+console.warn('Advertencia');
+console.error('Error');</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Mostrar texto directo en HTML desde JavaScript</h3>
+            <p>Para mostrar texto dentro de una página, se puede modificar un elemento del DOM.</p>
+            <pre><code>document.getElementById('mensaje').textContent = 'Hola desde JavaScript';</code></pre>
+            <p>También se puede usar <code>innerHTML</code>, aunque debe usarse con cuidado si el contenido viene de usuarios.</p>
+            <pre><code>document.getElementById('mensaje').innerHTML = '<strong>Texto en negrita</strong>';</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Modificar clases CSS</h3>
+            <p>JavaScript puede agregar o quitar clases para cambiar la apariencia de un elemento.</p>
+            <pre><code>document.querySelector('button').classList.add('activo');
+document.querySelector('button').classList.remove('activo');
+document.querySelector('button').classList.toggle('activo');</code></pre>
+            <p>Esto es muy útil para mostrar estados como activo, oculto o destacado.</p>
+          </article>
+
+          <article class="card">
+            <h3>Qué es un id y para qué sirve</h3>
+            <p>Un <strong>id</strong> es un nombre único que se asigna a un solo elemento HTML.</p>
+            <pre><code>&lt;h2 id="titulo-principal"&gt;Hola&lt;/h2&gt;</code></pre>
+            <p>Se usa para identificar un elemento de forma específica con JavaScript o CSS.</p>
+            <pre><code>document.getElementById('titulo-principal');
+#titulo-principal { color: blue; }</code></pre>
+            <div class="tip-box">
+              Un <strong>id</strong> debe ser único en la página, mientras que una <strong>class</strong> puede aplicarse a varios elementos.
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Conceptos extra que conviene recordar</h3>
+            <ul>
+              <li><strong>let</strong>: permite cambiar el valor de una variable.</li>
+              <li><strong>const</strong>: no permite reasignar el valor.</li>
+              <li><strong>===</strong>: compara valores y tipos de forma estricta.</li>
+              <li><strong>template literals</strong>: permiten insertar variables dentro de cadenas con <code>${}</code>.</li>
+            </ul>
+            <pre><code>const nombre = 'Ana';
+console.log(`Hola, ${nombre}`);</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section id="http">
+        <h2 class="section-title">Protocolos HTTP, URL y métodos de petición</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>¿Qué es una URL?</h3>
+            <p>Una URL es la dirección que indica dónde está un recurso en la web. Por ejemplo:</p>
+            <pre><code>https://example.com/products?id=1</code></pre>
+            <ul>
+              <li><strong>Protocolo</strong>: <code>https://</code></li>
+              <li><strong>Dominio</strong>: <code>example.com</code></li>
+              <li><strong>Ruta</strong>: <code>/products</code></li>
+              <li><strong>Parámetros</strong>: <code>?id=1</code></li>
+            </ul>
+            <p>La URL sirve para localizar y pedir información a un servidor.</p>
+          </article>
+
+          <article class="card">
+            <h3>Tipos de protocolos HTTP</h3>
+            <p>Los protocolos definen cómo viajan los datos entre navegador y servidor.</p>
+            <ul>
+              <li><strong>HTTP</strong>: protocolo básico, sin cifrado.</li>
+              <li><strong>HTTPS</strong>: igual que HTTP, pero con cifrado para mayor seguridad.</li>
+            </ul>
+            <div class="tip-box">
+              En la práctica, se prefiere HTTPS porque protege la información que viaja entre el usuario y el servidor.
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Cómo funcionan las peticiones</h3>
+            <p>Una petición HTTP viaja desde el navegador hacia un servidor con una línea de solicitud, cabeceras y, a veces, un cuerpo.</p>
+            <pre><code>GET /productos HTTP/1.1
+Host: ejemplo.com</code></pre>
+            <p>El servidor devuelve una respuesta con un código de estado, cabeceras y un cuerpo con datos.</p>
+          </article>
+
+          <article class="card">
+            <h3>Métodos HTTP más usados</h3>
+            <ul>
+              <li><strong>GET</strong>: leer datos. Se usa para consultar información.</li>
+              <li><strong>POST</strong>: enviar datos para crear algo nuevo.</li>
+              <li><strong>PUT</strong>: reemplazar por completo un recurso.</li>
+              <li><strong>PATCH</strong>: actualizar solo parte de un recurso.</li>
+              <li><strong>OPTIONS</strong>: preguntar qué acciones soporta el servidor.</li>
+              <li><strong>DELETE</strong>: borrar un recurso.</li>
+            </ul>
+            <pre><code>fetch('https://api.ejemplo.com/usuarios', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ nombre: 'Ana' })
+});</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section id="variables-js">
+        <h2 class="section-title">Diferencia entre variables en JavaScript</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>var</h3>
+            <p>Es la forma antigua de declarar variables. Tiene un alcance más amplio y puede causar problemas en scripts más grandes.</p>
+            <pre><code>var edad = 20;</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>let</h3>
+            <p>Se usa cuando la variable puede cambiar de valor. Tiene alcance de bloque.</p>
+            <pre><code>let contador = 0;
+contador = 1;</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>const</h3>
+            <p>Se usa para valores que no deben cambiar. También tiene alcance de bloque.</p>
+            <pre><code>const nombre = 'María';</code></pre>
+            <div class="tip-box">
+              Usa <strong>const</strong> por defecto, <strong>let</strong> cuando necesites reasignar y evita <strong>var</strong> en código moderno.
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="eventos-dom">
+        <h2 class="section-title">Tipos de eventos en JavaScript</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Eventos de interacción</h3>
+            <ul>
+              <li><strong>click</strong>: ocurre al hacer clic.</li>
+              <li><strong>dblclick</strong>: ocurre al hacer doble clic.</li>
+              <li><strong>mouseover</strong>: al pasar el mouse sobre un elemento.</li>
+              <li><strong>mouseout</strong>: al salir del elemento.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Eventos de formulario</h3>
+            <ul>
+              <li><strong>input</strong>: cuando el usuario escribe.</li>
+              <li><strong>change</strong>: cuando cambia el valor.</li>
+              <li><strong>submit</strong>: al enviar el formulario.</li>
+              <li><strong>blur</strong>: cuando un elemento pierde el foco.</li>
+              <li><strong>focus</strong>: cuando un elemento obtiene el foco.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Ejemplo básico</h3>
+            <pre><code>boton.addEventListener('click', () => {
+  console.log('Se hizo clic');
+});</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section id="dom-avanzado">
+        <h2 class="section-title">Manipulación avanzada del DOM</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Métodos para agregar elementos</h3>
+            <ul>
+              <li><strong>appendChild()</strong>: agrega un nodo hijo al final.</li>
+              <li><strong>append()</strong>: agrega uno o varios nodos al final.</li>
+              <li><strong>prepend()</strong>: agrega uno o varios nodos al inicio.</li>
+            </ul>
+            <pre><code>const item = document.createElement('li');
+item.textContent = 'Nuevo item';
+document.querySelector('ul').appendChild(item);</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Métodos para eliminar o reemplazar</h3>
+            <ul>
+              <li><strong>remove()</strong>: elimina un elemento del DOM.</li>
+              <li><strong>removeChild()</strong>: elimina un hijo específico.</li>
+              <li><strong>replaceWith()</strong>: reemplaza un elemento por otro.</li>
+            </ul>
+            <pre><code>document.querySelector('#mensaje').remove();</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Propiedades relacionadas</h3>
+            <ul>
+              <li><strong>textContent</strong>: cambia el texto visible.</li>
+              <li><strong>innerHTML</strong>: inserta HTML.</li>
+              <li><strong>classList</strong>: agrega, quita o alterna clases CSS.</li>
+              <li><strong>setAttribute()</strong>: agrega atributos.</li>
+              <li><strong>getAttribute()</strong>: obtiene el valor de un atributo.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="plantillas">
+        <h2 class="section-title">Template strings o plantillas literales</h2>
+        <article class="card large-card">
+          <p>Los template strings permiten crear cadenas de texto de forma más clara y flexible usando comillas invertidas <code>` `</code>.</p>
+          <pre><code>const nombre = 'Ana';
+const saludo = `Hola, ${nombre}`;
+console.log(saludo);</code></pre>
+          <p>Se usan para:</p>
+          <ul>
+            <li>insertar variables dentro de textos</li>
+            <li>crear mensajes más legibles</li>
+            <li>escribir HTML dinámico con interpolación</li>
+          </ul>
+          <pre><code>const producto = 'Laptop';
+const mensaje = `El producto seleccionado es ${producto}`;</code></pre>
+        </article>
+      </section>
+
+      <section id="math">
+        <h2 class="section-title">Matemáticas en JavaScript</h2>
+        <article class="card large-card">
+          <p>JavaScript usa operadores matemáticos básicos y el objeto global <code>Math</code> para operaciones más avanzadas.</p>
+
+          <h3>Operadores básicos</h3>
+          <pre><code>const suma = 2 + 3;
+const resta = 10 - 4;
+const multiplicacion = 5 * 6;
+const division = 12 / 3;
+const modulo = 10 % 3; // resto de la división
+const exponente = 2 ** 3; // 8</code></pre>
+
+          <h3>Prioridad de operaciones</h3>
+          <p>JavaScript respeta el orden matemático: paréntesis, exponentes, multiplicación/división, suma/resta.</p>
+          <pre><code>const resultado = 2 + 3 * 4;      // 14
+const correcto = (2 + 3) * 4;      // 20</code></pre>
+
+          <h3>Incremento y decremento</h3>
+          <pre><code>let contador = 1;
+contador++; // 2
+contador--; // 1
+let doble = contador * 2;</code></pre>
+
+          <h3>El objeto Math</h3>
+          <p><code>Math</code> incluye funciones y constantes útiles para cálculos.</p>
+          <ul>
+            <li><strong>Math.PI</strong>: valor de pi.</li>
+            <li><strong>Math.abs(x)</strong>: valor absoluto.</li>
+            <li><strong>Math.round(x)</strong>: redondea al entero más cercano.</li>
+            <li><strong>Math.floor(x)</strong>: redondea hacia abajo.</li>
+            <li><strong>Math.ceil(x)</strong>: redondea hacia arriba.</li>
+            <li><strong>Math.sqrt(x)</strong>: raíz cuadrada.</li>
+            <li><strong>Math.pow(x, y)</strong>: potencia.</li>
+            <li><strong>Math.max(...valores)</strong>: mayor valor.</li>
+            <li><strong>Math.min(...valores)</strong>: menor valor.</li>
+            <li><strong>Math.random()</strong>: número aleatorio entre 0 y 1.</li>
+            <li><strong>Math.trunc(x)</strong>: elimina decimales.</li>
+            <li><strong>Math.sign(x)</strong>: indica si es negativo, positivo o cero.</li>
+          </ul>
+          <pre><code>const pi = Math.PI;
+const valorAbsoluto = Math.abs(-5);
+const redondeo = Math.round(3.2);
+const mayor = Math.max(1, 5, 3);
+const aleatorio = Math.random();</code></pre>
+
+          <h3>Usos comunes</h3>
+          <p>Se usa <code>Math</code> para calcular distancias, generar valores aleatorios, animaciones, validaciones numéricas y gráficos.</p>
+          <p>También sirve para obtener valores exactos y trabajar con porcentajes y valores de interfaz.</p>
+        </article>
+      </section>
+
+      <section id="fetch">
+        <h2 class="section-title">Peticiones con fetch: cómo funcionan las solicitudes y respuestas</h2>
+        <article class="card large-card">
+          <p>
+            <strong>fetch</strong> permite pedir datos a un servidor desde JavaScript. Esto es fundamental para trabajar con APIs,
+            cargar información dinámica y actualizar una página sin recargarla por completo.
+          </p>
+
+          <pre><code>fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then(res => res.json())
+  .then(data => console.log(data));</code></pre>
+
+          <div class="tip-box">
+            Una petición web tiene dos partes importantes: la solicitud que envía el cliente y la respuesta que devuelve el servidor.
+          </div>
+
+          <h3>1. Qué ocurre al hacer una petición</h3>
+          <ul>
+            <li>El navegador crea una solicitud HTTP.</li>
+            <li>El servidor recibe esa solicitud.</li>
+            <li>El servidor prepara una respuesta.</li>
+            <li>JavaScript recibe la respuesta y la convierte en datos útiles.</li>
+          </ul>
+
+          <h3>2. Ejemplo de una respuesta en JSON</h3>
+          <pre><code>{
+  "userId": 1,
+  "id": 1,
+  "title": "Ejemplo de título",
+  "body": "Este es el contenido que llega desde el servidor"
+}</code></pre>
+
+          <p>
+            El JSON es un formato de texto muy usado para enviar información entre un navegador y un servidor.
+            JavaScript puede leerlo y transformarlo en objetos reales.
+          </p>
+
+          <h3>3. Tipos de códigos de estado HTTP</h3>
+          <ul>
+            <li><strong>200 OK</strong>: la solicitud fue exitosa y el servidor devolvió los datos.</li>
+            <li><strong>201 Created</strong>: se creó un recurso nuevo correctamente.</li>
+            <li><strong>204 No Content</strong>: la operación fue exitosa, pero no hay contenido para mostrar.</li>
+            <li><strong>400 Bad Request</strong>: la solicitud tiene un error de formato o datos incorrectos.</li>
+            <li><strong>401 Unauthorized</strong>: falta autenticación o permisos.</li>
+            <li><strong>403 Forbidden</strong>: el usuario no tiene permiso para acceder al recurso.</li>
+            <li><strong>404 Not Found</strong>: no se encontró el recurso solicitado.</li>
+            <li><strong>500 Internal Server Error</strong>: ocurrió un error interno en el servidor.</li>
+          </ul>
+
+          <h3>4. Cómo se leen las respuestas en JavaScript</h3>
+          <pre><code>fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then(respuesta => {
+    if (!respuesta.ok) {
+      throw new Error('Hubo un problema con la petición');
+    }
+    return respuesta.json();
+  })
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error(error);
+  });</code></pre>
+
+          <p>
+            En este ejemplo, <code>respuesta.ok</code> indica si la petición fue exitosa. Si no lo fue, se muestra un error.
+            Luego se convierte la respuesta en JSON con <code>respuesta.json()</code>.
+          </p>
+
+          <h3>5. ¿Por qué son importantes?</h3>
+          <p>
+            Las peticiones y respuestas permiten que una web se conecte con servicios reales, recupere datos,
+            envíe formularios, consulte productos, usuarios, noticias o información en tiempo real.
+            Sin este proceso, una página sería estática y no podría interactuar con el resto del mundo.
+          </p>
+        </article>
+      </section>
+
+      <section id="almacenamiento">
+        <h2 class="section-title">Almacenamiento en el navegador: localStorage, sessionStorage y cookies</h2>
+        <article class="card large-card">
+          <p>El navegador ofrece varias formas de guardar datos en el cliente. Las más importantes son <strong>localStorage</strong>, <strong>sessionStorage</strong> y <strong>cookies</strong>.</p>
+
+          <h3>Qué es localStorage</h3>
+          <p><strong>localStorage</strong> es un espacio de almacenamiento que permanece incluso después de cerrar el navegador. Los datos se guardan en el navegador y solo se pueden leer desde el mismo origen (protocolo, dominio y puerto).</p>
+          <p>Se usa para guardar configuraciones, preferencias de usuario y datos que deben mantenerse entre sesiones.</p>
+          <pre><code>// Guardar datos en localStorage
+localStorage.setItem('tema', 'oscuro');
+localStorage.setItem('usuario', JSON.stringify({ nombre: 'Ana', email: 'ana@example.com' }));
+
+// Leer datos
+const tema = localStorage.getItem('tema');
+const usuario = JSON.parse(localStorage.getItem('usuario'));
+
+// Eliminar datos
+localStorage.removeItem('tema');
+
+// Limpiar todo el almacenamiento local
+localStorage.clear();</code></pre>
+
+          <h3>Qué es sessionStorage</h3>
+          <p><strong>sessionStorage</strong> guarda datos solo mientras la pestaña o ventana está abierta. Cuando se cierra, esos datos se eliminan automáticamente. Es útil para datos temporales como borradores de formularios, pasos de un flujo o información que no debe persistir al cerrar la pestaña.</p>
+          <pre><code>// Guardar datos en sessionStorage
+sessionStorage.setItem('pasoActual', '2');
+
+// Leer datos
+const paso = sessionStorage.getItem('pasoActual');
+
+// Eliminar datos
+sessionStorage.removeItem('pasoActual');</code></pre>
+
+          <h3>Qué son las cookies</h3>
+          <p>Las <strong>cookies</strong> son pequeños archivos de texto que el navegador guarda y envía automáticamente al servidor en cada petición al mismo dominio. Por eso se usan mucho para mantener sesiones de usuario, recordar preferencias en el servidor y manejar autenticación.</p>
+          <p>Las cookies pueden tener una fecha de caducidad, un alcance de ruta o dominio, y opciones de seguridad como <code>Secure</code> y <code>SameSite</code>.</p>
+          <pre><code>// Crear o actualizar una cookie
+const valor = 'oscuro';
+document.cookie = `tema=${valor}; path=/; max-age=${60 * 60 * 24 * 7}; secure; samesite=strict`;
+
+// Leer una cookie
+function obtenerCookie(nombre) {
+  return document.cookie
+    .split('; ')
+    .find(fila => fila.startsWith(nombre + '='))
+    ?.split('=')[1];
+}
+
+const temaCookie = obtenerCookie('tema');
+
+// Eliminar una cookie
+document.cookie = 'tema=; path=/; max-age=0';</code></pre>
+
+          <h3>Diferencias clave</h3>
+          <ul>
+            <li><strong>Alcance:</strong> localStorage y sessionStorage solo en el cliente; cookies se envían al servidor con cada petición.</li>
+            <li><strong>Duración:</strong> localStorage persiste hasta que se borre; sessionStorage dura solo mientras la pestaña está abierta; cookies duran según su caducidad.</li>
+            <li><strong>Tamaño:</strong> localStorage/sessionStorage suelen permitir varios megabytes; cookies están limitadas a unos pocos kilobytes.</li>
+            <li><strong>Acceso desde JavaScript:</strong> localStorage y sessionStorage son accesibles libremente desde JS; cookies también, excepto cuando son <code>HttpOnly</code>.</li>
+            <li><strong>Uso típico:</strong> localStorage para preferencias y datos persistentes de cliente; sessionStorage para datos temporales de sesión; cookies para sesión de servidor, autenticación y datos que el servidor necesita en cada petición.</li>
+          </ul>
+
+          <h3>Cuándo usar cada uno</h3>
+          <ul>
+            <li><strong>localStorage</strong>: temas de usuario, idioma, última página visitada, configuraciones que deben persistir.</li>
+            <li><strong>sessionStorage</strong>: formularios de un solo flujo, páginas de compra, datos temporales que no deben persistir tras cerrar la pestaña.</li>
+            <li><strong>cookies</strong>: identificación de sesión en el servidor, preferencias compartidas con el servidor, datos de seguimiento y opciones de seguridad.</li>
+          </ul>
+
+          <div class="tip-box">
+            No almacenes contraseñas ni tokens sensibles en localStorage o cookies accesibles desde JavaScript. Para datos de autenticación se recomienda usar cookies seguras con <code>HttpOnly</code> y <code>Secure</code> en el servidor.
+          </div>
+        </article>
+      </section>
+
+      <section id="actividades">
+        <h2 class="section-title">Actividades del módulo</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>En clase</h3>
+            <ul>
+              <li>Mostrar un mensaje al cargar la página.</li>
+              <li>Responder a un clic en un botón.</li>
+              <li>Modificar texto con JavaScript.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Para la casa</h3>
+            <ul>
+              <li>Crear una función que sume dos números.</li>
+              <li>Validar un formulario simple.</li>
+              <li>Ocultar y mostrar contenido con un botón.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Proyecto</h3>
+            <ul>
+              <li>Agregar interactividad a una página HTML y CSS previamente creada.</li>
+              <li>Usar eventos, funciones y manipulación del DOM.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>JavaScript: el lenguaje que da comportamiento a la web.</p>
+    </footer>
+  </body>
+</html>

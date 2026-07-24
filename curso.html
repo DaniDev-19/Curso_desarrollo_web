@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Curso completo de HTML, estructura web, semántica, formularios, DOM, accesibilidad, SEO y transición a CSS y JavaScript."
+    />
+    <title>Curso completo de HTML para estudiantes</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <p class="eyebrow">Curso práctico · Desarrollo web desde cero</p>
+      <h1>HTML: la base de toda página web</h1>
+      <p class="lead">
+        Este curso está pensado para que los estudiantes comprendan qué es la web,
+        cómo funciona un navegador, cómo se estructura una página con HTML, cuándo
+        usar cada etiqueta, cómo trabajar con formularios, atributos, semántica,
+        DOM, SEO y accesibilidad, y cómo este conocimiento sirve como base para
+        CSS y JavaScript.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#modulos">Ver plan de módulos</a>
+        <a class="btn btn-secondary" href="#actividades">Actividades del curso</a>
+      </div>
+    </header>
+
+    <nav class="top-nav" aria-label="Navegación del curso">
+      <a href="#fundamentos">Fundamentos</a>
+      <a href="#html-basico">HTML básico</a>
+      <a href="#formularios">Formularios</a>
+      <a href="#dom">DOM y navegador</a>
+      <a href="#modulos">Módulos</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#actividades">Actividades</a>
+    </nav>
+
+    <section class="intro-grid" style="padding: 1.2rem 0 0;">
+      <article class="card">
+        <h2>Próximos pasos del curso</h2>
+        <p>
+          Después de dominar HTML, el camino natural es avanzar hacia CSS para diseñar y luego hacia JavaScript para dar interactividad.
+        </p>
+        <div class="hero-actions" style="justify-content: flex-start; margin-top: 1rem;">
+          <a class="btn btn-primary" href="css.html">Ir a CSS</a>
+          <a class="btn btn-secondary" href="javascript.html">Ir a JavaScript</a>
+        </div>
+      </article>
+    </section>
+
+    <main>
+      <section id="fundamentos" class="intro-grid">
+        <article class="card">
+          <h2>¿Qué es la web?</h2>
+          <p>
+            La web es un sistema de información global accesible a través de internet.
+            Permite publicar documentos, aplicaciones, imágenes, videos y servicios.
+            Para que una página sea visible, se necesita un navegador, un servidor y
+            archivos bien estructurados.
+          </p>
+          <div class="tip-box">
+            HTML no es un lenguaje de programación, sino un lenguaje de marcado.
+            Su función es describir el contenido y su significado.
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>¿Qué es un navegador?</h2>
+          <p>
+            Un navegador interpreta el código HTML, CSS y JavaScript y lo convierte en
+            una interfaz visual. Ejemplos: Chrome, Firefox, Edge y Safari.
+          </p>
+          <p>
+            Cuando un usuario entra a una página, el navegador solicita archivos al
+            servidor, los procesa y los renderiza en pantalla.
+          </p>
+        </article>
+      </section>
+
+      <section>
+        <h2 class="section-title">¿Qué es un editor de texto?</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Herramienta de trabajo</h3>
+            <p>
+              Un editor de texto es la herramienta donde se escribe el código. Puede ser
+              Visual Studio Code, Sublime Text, Atom o incluso un bloc de notas, aunque
+              los profesionales prefieren editores con funciones como resaltado de sintaxis,
+              autocompletado y herramientas de depuración.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Importancia para aprender</h3>
+            <p>
+              Aprender a escribir código en un editor ayuda a organizar mejor las ideas,
+              mantener limpio el proyecto y trabajar con archivos separados para HTML, CSS y JavaScript.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="html-basico">
+        <h2 class="section-title">Fundamentos de HTML</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>1. Etiquetas y sintaxis</h3>
+            <p>
+              Las etiquetas indican al navegador qué tipo de contenido se está creando.
+              Se escriben con corchetes angulares y pueden abrirse y cerrarse.
+            </p>
+            <pre><code>&lt;h1&gt;Título principal&lt;/h1&gt;
+&lt;p&gt;Este es un párrafo.&lt;/p&gt;</code></pre>
+            <ul>
+              <li>Las etiquetas pueden ser de apertura y cierre.</li>
+              <li>Algunas etiquetas son autónomas.</li>
+              <li>Los atributos agregan información o comportamiento.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>2. Atributos</h3>
+            <p>
+              Los atributos permiten dar más información a las etiquetas. Son muy útiles
+              para enlaces, imágenes, formularios y accesibilidad.
+            </p>
+            <pre><code>&lt;a href="https://example.com" target="_blank"&gt;Ir al sitio&lt;/a&gt;
+&lt;img src="foto.png" alt="Foto de ejemplo"&gt;</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>3. Anidación</h3>
+            <p>
+              Una etiqueta puede contener otras etiquetas. Eso se llama anidación y es
+              esencial para construir estructuras limpias y correctas.
+            </p>
+            <pre><code>&lt;article&gt;
+  &lt;h2&gt;Noticia&lt;/h2&gt;
+  &lt;p&gt;Texto de la noticia.&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Estructura básica de una página</h2>
+        <article class="card large-card">
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Mi primer sitio&lt;/title&gt;
+    &lt;meta name="description" content="Página creada con HTML"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Bienvenidos&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+      &lt;section&gt;
+        &lt;p&gt;Contenido principal.&lt;/p&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+      &lt;p&gt;Pie de página.&lt;/p&gt;
+    &lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          <div class="tip-box">
+            La estructura correcta ayuda a que la página se vea ordenada, sea accesible y sea más fácil de mantener.
+          </div>
+        </article>
+      </section>
+
+      <section>
+        <h2 class="section-title">Etiquetas esenciales que todo estudiante debe dominar</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Encabezados, párrafos y listas</h3>
+            <pre><code>&lt;h1&gt;Encabezado principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;p&gt;Párrafo de texto.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Elemento 1&lt;/li&gt;
+  &lt;li&gt;Elemento 2&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Enlaces, imágenes y medios</h3>
+            <pre><code>&lt;a href="pagina.html"&gt;Leer más&lt;/a&gt;
+&lt;img src="imagen.jpg" alt="Descripción de la imagen"&gt;
+&lt;video controls&gt;...&lt;/video&gt;</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Div, span, secciones y artículos</h3>
+            <pre><code>&lt;div&gt;Contenedor general&lt;/div&gt;
+&lt;span&gt;Texto inline&lt;/span&gt;
+&lt;section&gt;Sección principal&lt;/section&gt;
+&lt;article&gt;Artículo independiente&lt;/article&gt;</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Elementos, atributos, etiquetas de código y enlaces externos</h2>
+        <article class="card large-card">
+          <p>Entender las etiquetas HTML y sus atributos es clave. Además, hay etiquetas especiales para mostrar código y estructura, y formas estándar de cargar CSS y JavaScript.</p>
+          <h3>Etiquetas de código y texto preformateado</h3>
+          <p><code>&lt;code&gt;</code> se usa para mostrar fragmentos de código dentro de un texto. <code>&lt;pre&gt;</code> mantiene el formato, los saltos de línea y los espacios tal como se escriben.</p>
+          <pre><code>&lt;pre&gt;&lt;code&gt;
+const saludo = 'Hola';
+console.log(saludo);
+&lt;/code&gt;&lt;/pre&gt;</code></pre>
+          <p>Estas etiquetas son útiles para documentar ejemplos, crear consolas simuladas y mostrar código legible en una página.</p>
+
+          <h3>Atributos comunes por etiqueta</h3>
+          <p>Los atributos añaden información adicional a las etiquetas HTML.</p>
+          <ul>
+            <li><strong>id</strong>: identifica un único elemento en la página. Se usa para enlazar con CSS o JavaScript.</li>
+            <li><strong>class</strong>: aplica estilos o comportamiento a uno o varios elementos.</li>
+            <li><strong>name</strong>: etiqueta los campos de formularios y se usa en el envío de datos.</li>
+            <li><strong>value</strong>: valor inicial de un input, opción o botón.</li>
+            <li><strong>action</strong>: URL a la que se envía un formulario.</li>
+            <li><strong>method</strong>: método HTTP de envío del formulario, usualmente <code>GET</code> o <code>POST</code>.</li>
+            <li><strong>href</strong>: dirección del enlace en <code>&lt;a&gt;</code>.</li>
+            <li><strong>src</strong>: origen de imágenes, scripts o videos.</li>
+            <li><strong>alt</strong>: texto alternativo para imágenes, importante para accesibilidad y SEO.</li>
+            <li><strong>target</strong>: controla dónde se abre un enlace, por ejemplo <code>_blank</code>.</li>
+            <li><strong>rel</strong>: relación entre el documento actual y el recurso enlazado.</li>
+            <li><strong>placeholder</strong>: texto guía en inputs.</li>
+            <li><strong>required</strong>: obliga a completar un campo antes de enviar el formulario.</li>
+          </ul>
+
+          <h3>Meta tags y SEO básico</h3>
+          <p>Las meta etiquetas en el <code>&lt;head&gt;</code> ayudan a definir información importante para el navegador y los motores de búsqueda.</p>
+          <pre><code>&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;meta name="description" content="Descripción breve de la página"&gt;
+&lt;meta name="keywords" content="HTML, CSS, JavaScript, desarrollo web"&gt;
+&lt;meta name="author" content="Nombre del autor"&gt;</code></pre>
+          <p>El SEO (Search Engine Optimization) consiste en hacer que una página sea fácil de encontrar y entender por buscadores. Los elementos importantes son:</p>
+          <ul>
+            <li><strong>&lt;title&gt;</strong>: título visible en los resultados de búsqueda.</li>
+            <li><strong>&lt;meta description&gt;</strong>: descripción corta que aparece en los resultados.</li>
+            <li>Uso correcto de encabezados <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>.</li>
+            <li>Texto alternativo <code>alt</code> en imágenes.</li>
+            <li>URLs limpias y enlaces internos claros.</li>
+          </ul>
+
+          <h3>Cómo se inyecta CSS y JavaScript</h3>
+          <p>CSS se vincula en el <code>&lt;head&gt;</code> con <code>&lt;link&gt;</code>. JavaScript se puede insertar dentro del HTML con <code>&lt;script&gt;</code> o cargarse desde un archivo externo.</p>
+          <pre><code>&lt;!-- Enlazar CSS --&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+
+&lt;!-- Inyectar JavaScript al final del body --&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+          <p>También se puede cargar un script en el <code>&lt;head&gt;</code> usando <code>defer</code> o <code>async</code> para controlar el orden de carga y la ejecución.</p>
+          <pre><code>&lt;script src="script.js" defer&gt;&lt;/script&gt;
+&lt;script src="script.js" async&gt;&lt;/script&gt;</code></pre>
+          <p>Si la página necesita que el JavaScript se ejecute después de cargar el HTML, usar <code>defer</code> es una buena práctica.</p>
+          <p>También es posible escribir JavaScript directamente en el HTML:</p>
+          <pre><code>&lt;script&gt;
+  console.log('Hola desde el HTML');
+&lt;/script&gt;</code></pre>
+          <p>Para cargar librerías externas, se usan etiquetas <code>&lt;script src="..."&gt;</code> o gestores de paquetes en proyectos más complejos.</p>
+
+          <h3>Qué es una librería y una dependencia</h3>
+          <p>Una librería es código reutilizable que resuelve problemas comunes. Una dependencia es cualquier librería o paquete que tu proyecto necesita para funcionar.</p>
+          <p>Ejemplos de librerías útiles en JavaScript:</p>
+          <ul>
+            <li><strong>React</strong>: para construir interfaces de usuario.</li>
+            <li><strong>Vue</strong>: otra librería para interfaces reactivas.</li>
+            <li><strong>jQuery</strong>: simplifica la manipulación del DOM (menos usada hoy, pero útil como referencia histórica).</li>
+            <li><strong>Chart.js</strong>: para crear gráficos y visualizaciones.</li>
+            <li><strong>D3.js</strong>: para gráficos y visualizaciones avanzadas.</li>
+          </ul>
+          <p>En proyectos modernos, las dependencias se administran con herramientas como <code>npm</code> o <code>yarn</code>.</p>
+
+          <h3>Cómo se manejan las gráficas en JavaScript y cómo se renderizan en HTML</h3>
+          <p>Las gráficas se suelen dibujar usando librerías que usan <code>&lt;canvas&gt;</code> o SVG. El HTML contiene el contenedor y JavaScript crea los datos y dibuja la gráfica.</p>
+          <pre><code>&lt;canvas id="grafica" width="400" height="200"&gt;&lt;/canvas&gt;
+
+&lt;script&gt;
+  const ctx = document.getElementById('grafica').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Enero', 'Febrero', 'Marzo'],
+      datasets: [{ label: 'Ventas', data: [10, 20, 15], backgroundColor: '#2563eb' }]
+    }
+  });
+&lt;/script&gt;</code></pre>
+          <p>El HTML ofrece el lienzo, el JavaScript define los datos y la librería los pinta con formas, colores y ejes.</p>
+
+          <h3>Qué es una API</h3>
+          <p>Una API (Application Programming Interface) es una forma estandarizada de pedir datos o servicios a otra aplicación o servidor.</p>
+          <p>En web, una API normalmente responde con JSON y puede ser consultada con <code>fetch()</code> o herramientas similares.</p>
+          <pre><code>fetch('https://api.example.com/data')
+  .then(response =&gt; response.json())
+  .then(data =&gt; console.log(data));</code></pre>
+
+          <h3>Qué es SEO</h3>
+          <p>SEO significa Search Engine Optimization. Es la práctica de hacer que una página sea fácil de entender y relevante para los motores de búsqueda.</p>
+          <p>Las páginas con buen SEO tienen:</p>
+          <ul>
+            <li>estructura clara</li>
+            <li>títulos relevantes</li>
+            <li>texto descriptivo</li>
+            <li>enlaces útiles</li>
+            <li>imágenes con texto alternativo</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="formularios">
+        <h2 class="section-title">Formularios y tipos de inputs</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>¿Por qué son importantes?</h3>
+            <p>
+              Los formularios permiten captar información del usuario: nombres, correos,
+              contraseñas, opciones, archivos y mensajes. Son fundamentales para contacto,
+              registro, encuestas y pedidos.
+            </p>
+            <pre><code>&lt;form&gt;
+  &lt;label for="nombre"&gt;Nombre&lt;/label&gt;
+  &lt;input type="text" id="nombre" name="nombre"&gt;
+&lt;/form&gt;</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Tipos de inputs que deben conocer</h3>
+            <ul>
+              <li><code>text</code></li>
+              <li><code>email</code></li>
+              <li><code>password</code></li>
+              <li><code>number</code></li>
+              <li><code>tel</code></li>
+              <li><code>date</code></li>
+              <li><code>time</code></li>
+              <li><code>color</code></li>
+              <li><code>checkbox</code></li>
+              <li><code>radio</code></li>
+              <li><code>file</code></li>
+              <li><code>submit</code></li>
+              <li><code>reset</code></li>
+              <li><code>button</code></li>
+              <li><code>hidden</code></li>
+              <li><code>search</code></li>
+              <li><code>url</code></li>
+              <li><code>range</code></li>
+              <li><code>month</code></li>
+              <li><code>week</code></li>
+              <li><code>datetime-local</code></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="multimedia">
+        <h2 class="section-title">Multimedia en HTML: imágenes y videos</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Cómo se colocan imágenes en HTML</h3>
+            <p>La etiqueta <code>&lt;img&gt;</code> se usa para mostrar imágenes en una página. Es una etiqueta vacía, lo que significa que no tiene contenido interno.</p>
+            <pre><code>&lt;img src="foto.jpg" alt="Descripción de la imagen" width="600" height="400"&gt;</code></pre>
+            <p>El atributo <code>src</code> indica la ruta al archivo de imagen. <code>alt</code> describe la imagen para accesibilidad y SEO.</p>
+          </article>
+
+          <article class="card">
+            <h3>Formatos de imagen más comunes</h3>
+            <ul>
+              <li><strong>JPG / JPEG</strong>: ideal para fotos y degradados. Buena compresión, pero con pérdida de calidad.</li>
+              <li><strong>PNG</strong>: mejor para gráficos, iconos y transparencias. Soporta calidad sin pérdida.</li>
+              <li><strong>WEBP</strong>: formato moderno con buena compresión y soporte de transparencia. Es cada vez más usado en la web.</li>
+              <li><strong>SVG</strong>: imágenes vectoriales ideales para iconos y logotipos. Escalan sin perder calidad.</li>
+              <li><strong>GIF</strong>: útil para animaciones simples, aunque suele ser más pesado que otros formatos.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Imágenes modernas con <code>&lt;picture&gt;</code> y <code>srcset</code></h3>
+            <p>El elemento <code>&lt;picture&gt;</code> permite ofrecer diferentes versiones de una imagen según el tamaño del dispositivo o el formato soportado.</p>
+            <pre><code>&lt;picture&gt;
+  &lt;source srcset="imagen-800.webp" type="image/webp" media="(min-width: 800px)"&gt;
+  &lt;source srcset="imagen-400.webp" type="image/webp" media="(max-width: 799px)"&gt;
+  &lt;img src="imagen.jpg" alt="Ejemplo moderno" loading="lazy" decoding="async" width="800" height="450"&gt;
+&lt;/picture&gt;</code></pre>
+            <p>El navegador elige la mejor fuente compatible y puede cargar la imagen de forma diferida con <code>loading="lazy"</code>.</p>
+            <p>También puedes usar <code>srcset</code> con densidades de pantalla para escoger imágenes de mayor resolución en pantallas retina:</p>
+            <pre><code>&lt;img src="foto-1x.jpg" srcset="foto-1x.jpg 1x, foto-2x.jpg 2x" alt="Foto retina" loading="lazy"&gt;</code></pre>
+            <p>Así se mejora la calidad en dispositivos de alta densidad sin cargar imágenes pesadas en pantallas normales.</p>
+          </article>
+
+          <article class="card">
+            <h3>Uso semántico con <code>&lt;figure&gt;</code> y <code>&lt;figcaption&gt;</code></h3>
+            <p> <code>&lt;figure&gt;</code> agrupa contenido multimedia y <code>&lt;figcaption&gt;</code> añade una leyenda semántica. Esto es ideal para imágenes, gráficos y videos que necesitan contexto.</p>
+            <pre><code>&lt;figure&gt;
+  &lt;img src="paisaje.webp" alt="Paisaje montañoso" width="800" height="450" loading="lazy"&gt;
+  &lt;figcaption&gt;Vista de un paisaje montañoso al amanecer.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+            <p>La leyenda ayuda a la accesibilidad y a que los motores de búsqueda entiendan mejor el contenido.</p>
+          </article>
+
+          <article class="card">
+            <h3>Cómo se colocan videos en HTML</h3>
+            <p>La etiqueta <code>&lt;video&gt;</code> permite reproducir archivos de video directamente en el navegador. Se puede usar con controles y fuentes alternativas.</p>
+            <pre><code>&lt;video controls width="640" height="360" poster="miniatura.jpg" playsinline&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  &lt;source src="video.webm" type="video/webm"&gt;
+  Tu navegador no soporta el elemento &lt;video&gt;.
+&lt;/video&gt;</code></pre>
+            <p>Usar varias <code>&lt;source&gt;</code> con distintos formatos ayuda a garantizar compatibilidad entre navegadores.</p>
+            <p>Agregar <code>playsinline</code> es útil en móviles para reproducir video dentro de la página sin pasar a pantalla completa automáticamente.</p>
+          </article>
+
+          <article class="card">
+            <h3>Formatos de video recomendados</h3>
+            <ul>
+              <li><strong>MP4</strong>: el más compatible con navegadores y dispositivos.</li>
+              <li><strong>WEBM</strong>: formato moderno con buena calidad y compresión para web.</li>
+              <li><strong>OGG</strong>: otro formato abierto que puede usarse como alternativa.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Consejos de uso</h3>
+            <p>Siempre agrega <code>alt</code> en imágenes y un texto alternativo de video si es necesario. Para videos es buena idea usar <code>poster</code> y controles de reproducción.</p>
+            <p>Usa imágenes ligeras y formatos modernos para mejorar la velocidad de carga y la experiencia del usuario.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Semántica, SEO y accesibilidad</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Semántica</h3>
+            <p>
+              La semántica ayuda a dar sentido real al contenido. Usar <code>&lt;header&gt;</code>,
+              <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>,
+              <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code> y <code>&lt;footer&gt;</code>
+              mejora mucho la organización del sitio.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>SEO</h3>
+            <p>
+              El SEO busca que el contenido sea entendido mejor por los motores de búsqueda.
+              Para ello conviene usar títulos claros, descripciones, encabezados jerárquicos,
+              enlaces útiles y textos alternativos en imágenes.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Accesibilidad</h3>
+            <p>
+              Una web accesible es una web más inclusiva. Esto incluye etiquetas bien usadas,
+              textos claros, contraste correcto, formularios con etiquetas y contenido que se pueda navegar con teclado.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="dom">
+        <h2 class="section-title">¿Qué es el DOM y cómo se renderiza una página?</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>DOM</h3>
+            <p>
+              El DOM es la representación estructural del documento en memoria. Cada etiqueta
+              se convierte en un nodo, y esos nodos forman un árbol que el navegador puede leer,
+              modificar y mostrar.
+            </p>
+            <pre><code>&lt;body&gt;
+  &lt;h1&gt;Hola&lt;/h1&gt;
+  &lt;p&gt;Mundo&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+          </article>
+
+          <article class="card">
+            <h3>Renderización</h3>
+            <p>
+              Cuando el navegador recibe el código, lo interpreta, construye el DOM, aplica
+              estilos y muestra el resultado en pantalla. HTML aporta estructura, CSS aporta diseño
+              y JavaScript aporta interacción.
+            </p>
+            <div class="tip-box">
+              HTML + CSS + JavaScript trabajan de forma complementaria: HTML estructura, CSS estilos y JavaScript da comportamiento.
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="modulos">
+        <h2 class="section-title">Plan modular del curso</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Módulo 1. Introducción a la web</h3>
+            <ul>
+              <li>¿Qué es internet?</li>
+              <li>¿Qué es la web?</li>
+              <li>¿Qué es un navegador?</li>
+              <li>¿Qué es un editor de texto?</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Módulo 2. Fundamentos de HTML</h3>
+            <ul>
+              <li>Etiquetas, atributos y sintaxis.</li>
+              <li>Jerarquía y anidación.</li>
+              <li>Encabezados, párrafos y listas.</li>
+              <li>Enlaces e imágenes.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Módulo 3. Estructura y semántica</h3>
+            <ul>
+              <li>Doctype, html, head y body.</li>
+              <li>Secciones semánticas.</li>
+              <li>Div, span y maquetación básica.</li>
+              <li>Accesibilidad y SEO básico.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Módulo 4. Formularios</h3>
+            <ul>
+              <li>Form, label, input, textarea y button.</li>
+              <li>Tipos de inputs.</li>
+              <li>Validación básica.</li>
+              <li>Mejores prácticas de usabilidad.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Módulo 5. DOM y navegador</h3>
+            <ul>
+              <li>¿Qué es el DOM?</li>
+              <li>Cómo renderiza el navegador.</li>
+              <li>Relación entre HTML, CSS y JavaScript.</li>
+              <li>Concepto de árbol de nodos.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Módulo 6. Transición a CSS y JavaScript</h3>
+            <ul>
+              <li>HTML como estructura.</li>
+              <li>CSS como estilo.</li>
+              <li>JavaScript como lógica e interacción.</li>
+              <li>Por qué HTML y CSS no se consideran lenguajes de programación.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="recursos">
+        <h2 class="section-title">Recursos útiles para crear páginas web</h2>
+        <article class="card large-card">
+          <p>Estos recursos ayudan a aprender HTML, CSS, JavaScript, SEO, accesibilidad y buenas prácticas de desarrollo web.</p>
+          <ul>
+            <li><a href="https://developer.mozilla.org/es/" target="_blank" rel="noreferrer">MDN Web Docs</a> - Documentación completa de HTML, CSS y JavaScript.</li>
+            <li><a href="https://www.w3schools.com/" target="_blank" rel="noreferrer">W3Schools</a> - Tutoriales prácticos y ejemplos interactivos.</li>
+            <li><a href="https://css-tricks.com/" target="_blank" rel="noreferrer">CSS-Tricks</a> - Artículos y guías sobre diseño y CSS moderno.</li>
+            <li><a href="https://web.dev/" target="_blank" rel="noreferrer">web.dev</a> - Buenas prácticas, rendimiento y accesibilidad.</li>
+            <li><a href="https://caniuse.com/" target="_blank" rel="noreferrer">Can I Use</a> - Compatibilidad de navegadores para HTML, CSS y JavaScript.</li>
+            <li><a href="https://fonts.google.com/" target="_blank" rel="noreferrer">Google Fonts</a> - Tipografías libres para usar en proyectos web.</li>
+            <li><a href="https://getbootstrap.com/" target="_blank" rel="noreferrer">Bootstrap</a> - Framework de CSS para interfaces rápidas y responsivas.</li>
+            <li><a href="https://chartjs.org/" target="_blank" rel="noreferrer">Chart.js</a> - Librería sencilla para crear gráficos en JavaScript.</li>
+            <li><a href="https://www.chartjs.org/docs/latest/" target="_blank" rel="noreferrer">Documentación de Chart.js</a> - Guías para gráficos y visualizaciones.</li>
+            <li><a href="https://developers.google.com/search/docs/" target="_blank" rel="noreferrer">Guías de SEO de Google</a> - Cómo optimizar páginas para buscadores.</li>
+          </ul>
+          <div class="tip-box">
+            Usar recursos confiables ayuda a escribir código más limpio, aprender mejores prácticas y descubrir nuevas herramientas para mejorar tus proyectos.
+          </div>
+        </article>
+      </section>
+
+      <section id="actividades">
+        <h2 class="section-title">Actividades de clase y tareas</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Actividades en clase</h3>
+            <ul>
+              <li>Crear una página con título, párrafos y listas.</li>
+              <li>Agregar enlaces e imágenes.</li>
+              <li>Construir un formulario con varios tipos de inputs.</li>
+              <li>Comparar una estructura semántica y una no semántica.</li>
+              <li>Identificar cómo se ve la estructura del DOM en una página simple.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Actividades para la casa</h3>
+            <ul>
+              <li>Diseñar una landing page sencilla con HTML.</li>
+              <li>Crear una página de contacto con formulario.</li>
+              <li>Desarrollar una galería de imágenes con enlaces.</li>
+              <li>Elaborar un mini portafolio personal.</li>
+              <li>Investigar y explicar la diferencia entre HTML, CSS y JavaScript.</li>
+              <li>Resolver el ejercicio JSON en <a href="Api/index.html">Api/index.html</a> y practicar la carga de datos desde un archivo <code>core.json</code>.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Proyecto final</h3>
+            <ul>
+              <li>Crear una página web completa y organizada.</li>
+              <li>Usar etiquetas correctas y semánticas.</li>
+              <li>Agregar formularios, imágenes y enlaces.</li>
+              <li>Aplicar buenas prácticas de accesibilidad y SEO básico.</li>
+              <li>Presentar la página como un proyecto de inicio del desarrollo web.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">HTML, CSS y JavaScript: una base para el desarrollo web</h2>
+        <article class="card large-card">
+          <p>
+            HTML define la estructura del contenido. CSS define la presentación y el diseño.
+            JavaScript agrega comportamiento e interacción. Por esa razón, estos tres trabajan
+            juntos para construir experiencias web completas.
+          </p>
+          <div class="tip-box">
+            HTML y CSS no se consideran lenguajes de programación en el sentido tradicional porque no ejecutan lógica compleja ni decisiones con instrucciones condicionales. JavaScript sí es un lenguaje de programación porque permite crear lógica, funciones, eventos y comportamiento dinámico.
+          </div>
+        </article>
+      </section>
+
+      <section>
+        <h2 class="section-title">Plan de acompañamiento del curso</h2>
+        <article class="card large-card">
+          <ul>
+            <li><strong>Objetivo general:</strong> Que los estudiantes comprendan la estructura de una página web y puedan construir una base sólida en HTML.</li>
+            <li><strong>Objetivo específico:</strong> Que aprendan a usar etiquetas correctamente, estructurar contenido, crear formularios, entender el DOM y prepararse para CSS y JavaScript.</li>
+            <li><strong>Enfoque metodológico:</strong> Explicación guiada, ejemplos, práctica constante, revisión en clase y proyectos progresivos.</li>
+            <li><strong>Resultado esperado:</strong> Que cada estudiante pueda construir una página web sencilla, organizada, accesible y con una base sólida para seguir creciendo.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>Curso completo de HTML · Base para crear páginas web con orden, claridad y propósito.</p>
+      <p>Preparado para estudiantes que quieren aprender desarrollo web de forma práctica y significativa.</p>
+    </footer>
+  </body>
+</html>
