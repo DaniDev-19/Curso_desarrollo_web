@@ -1,0 +1,48 @@
+body {
+    padding: 50px;
+    margin: auto;
+    box-sizing: border-box;
+    box-sizing: content-box;
+    color: white;
+    background-color: #141414;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    text-align: center;
+    width: 1200px;
+    height: auto;
+}
+
+.header-encabezado {
+    background-color: blue;
+}
+
+.nav-principal {
+    background-color: yellow;
+}
+
+.container {
+    background-color: orange;
+}
+
+.section-hero {
+    background-color: red;
+}
+
+.section-services {
+    background-color: gold;
+}
+
+.section-block {
+    background-color: gray;
+}
+
+.section-aside {
+    background-color: purple;
+}
+
+.footer {
+    background-color: magenta;
+}
