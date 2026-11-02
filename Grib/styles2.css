@@ -1,0 +1,19 @@
+.grid-panel {
+    display: grid;
+    background-color: #f1f5f9;
+    border: 2px solid #cbd5e1;
+    padding: 15px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 150px; 
+    gap: 20px; 
+}
+
+.caja {
+    background-color: #10b981;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 8px;
+}

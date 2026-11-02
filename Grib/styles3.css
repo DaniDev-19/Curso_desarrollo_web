@@ -1,0 +1,23 @@
+.grid-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 15px;
+    background-color: #e2e8f0;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.item {
+    background-color: #6366f1;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+/* El elemento destacado */
+.banner {
+    background-color: #ec4899; 
+    grid-column: 1 / 3;      
+}

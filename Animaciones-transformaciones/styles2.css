@@ -1,0 +1,50 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px;
+    background-color: rgba(9, 9, 9, 0.826)
+}
+
+.spinner-container {
+    padding: 5px;
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #e2e8f0;
+    border-top: 5px solid #3b82f6; 
+    margin-bottom: 10px;
+    border-radius: 50%;
+    animation: girar 1s linear infinite;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+
+.paragraf {
+    padding:10px;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-left: 2px solid blue;
+    border-right: 2px solid blue;
+    border-radius: 10px;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

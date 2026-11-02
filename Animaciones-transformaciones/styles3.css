@@ -1,0 +1,28 @@
+.grid-responsive {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 15px;
+    padding: 15px;
+}
+
+.caja {
+    background-color: #0284c7;
+    color: white;
+    padding: 50px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+    .grid-responsive {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .grid-responsive {
+        grid-template-columns: repeat(5, 1fr); 
+    }
+}
