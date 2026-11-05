@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/* 2. ESTILOS BASE DE LA PÁGINA */
+body {
+    background-color: #141414; 
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 25px 40px;
+    text-align: center;
+    border-radius: 16px; 
+    background: #141414; 
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* El degradado cónico que rueda por detrás */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, #4b385d, #ff007f, #00d4ff, #4b385d); 
+    animation: rodar 4s linear infinite; 
+    z-index: 1;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    inset: 3px; 
+    background: #141414; 
+    border-radius: 13px; 
+    z-index: 2;
+}
+
+.paragraf, 
+.paragraf-one {
+    position: relative;
+    z-index: 3;
+    max-width: 300px;
+    line-height: 1.5;
+}
+
+.paragraf { 
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    background: linear-gradient(45deg, #fff, #bba3d0); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.paragraf-one {
+    font-weight: 400; 
+    font-size: 0.95rem;
+    color: #a0a0a0; 
+}
+
+/* 5. ANIMACIÓN */
+@keyframes rodar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
