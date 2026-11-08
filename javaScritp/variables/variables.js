@@ -14,6 +14,6 @@ function SaludoCompleto (numero, saludar , nombre) {
 
 // SaludoCompleto(); 
 
-const paragraf = document.getElementById('paragraf').textContent = SaludoCompleto(26,'saludo', 'daniel').trim();
+const paragraf = document.getElementById('paragraf').innerHTML = SaludoCompleto(26,'saludo', 'daniel').trim();
 
 const paragrafito = document.getElementById('pequeño-parrafito').textContent = 'He aqui mi primera función en javaScript';
