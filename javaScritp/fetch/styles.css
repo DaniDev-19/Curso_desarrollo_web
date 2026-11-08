@@ -1,0 +1,100 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+  background: #f3f6fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.hero {
+  padding: 3rem 1.25rem;
+  color: white;
+  text-align: center;
+  background: #047857;
+}
+
+.hero h1 {
+  margin: 0.4rem 0;
+}
+
+.hero p {
+  margin-bottom: 0;
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+main {
+  width: min(760px, calc(100% - 2rem));
+  margin: 2rem auto;
+}
+
+.card {
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 16px #17255412;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+button {
+  min-height: 42px;
+  padding: 0.65rem 0.9rem;
+  border: 0;
+  border-radius: 7px;
+  color: white;
+  background: #047857;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #065f46;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.status {
+  min-height: 1.5rem;
+  color: #475569;
+}
+
+.course-name {
+  color: #047857;
+}
+
+.topic-list {
+  padding-left: 1.25rem;
+}
+
+.topic-list li {
+  margin: 0.8rem 0;
+}
+
+.challenge {
+  border-left: 5px solid #f59e0b;
+}
+
+code {
+  padding: 0.12rem 0.3rem;
+  border-radius: 4px;
+  background: #ecfdf5;
+}

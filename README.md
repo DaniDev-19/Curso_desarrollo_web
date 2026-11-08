@@ -27,6 +27,9 @@ Ideal para Aprender las bases y los fundamentos necesarios para adentrase en el 
 - `culebrita/` — juego de la serpiente
 - `Reloj/` — reloj digital en tiempo real
 - `presentacion/` — página de presentación del curso
+- `javaScritp/functions/` — ejercicios básicos de funciones
+- `javaScritp/fetch/` — ejercicio para cargar datos de un archivo JSON con `fetch`
+- `javaScritp/eventos/` — ejemplos de eventos `click`, `input`, `change` y `keydown`
 
 ## Estructura de carpetas
 
@@ -53,6 +56,16 @@ Ideal para Aprender las bases y los fundamentos necesarios para adentrase en el 
   - `style.css`
 - `presentacion/`
   - `presentacion.html`
+- `javaScritp/functions/`
+  - `index.html`
+  - `script.js`
+- `javaScritp/fetch/`
+  - `index.html`
+  - `script.js`
+  - `curso.json`
+- `javaScritp/eventos/`
+  - `index.html`
+  - `script.js`
 
 ## Cómo usar
 

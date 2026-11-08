@@ -1,0 +1,18 @@
+{
+  "nombre": "JavaScript para principiantes",
+  "descripcion": "Un curso corto para aprender los fundamentos de JavaScript.",
+  "temas": [
+    {
+      "nombre": "Variables",
+      "descripcion": "Guardar y usar información."
+    },
+    {
+      "nombre": "Funciones",
+      "descripcion": "Reutilizar instrucciones."
+    },
+    {
+      "nombre": "Eventos",
+      "descripcion": "Responder a las acciones de la persona usuaria."
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ejercicios para practicar eventos comunes en JavaScript." />
+    <title>Ejercicios de eventos | JavaScript</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <p class="eyebrow">JavaScript · Ejercicio 3</p>
+      <h1>Practica los eventos</h1>
+      <p>Los eventos permiten que tu página responda a clics, escritura y otras acciones.</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Evento click</h2>
+        <p>Pulsa el botón. Cada clic aumenta el contador.</p>
+        <button id="contador-btn" type="button">Hice clic</button>
+        <p id="contador" class="result" aria-live="polite">Clics: 0</p>
+      </section>
+
+      <section class="card">
+        <h2>Evento input</h2>
+        <p>Escribe algo para ver el texto actualizarse mientras escribes.</p>
+        <label for="texto">Tu mensaje</label>
+        <input id="texto" type="text" placeholder="Escribe aquí" />
+        <p id="vista-previa" class="result" aria-live="polite">Tu mensaje aparecerá aquí.</p>
+      </section>
+
+      <section class="card">
+        <h2>Evento change</h2>
+        <p>Cambia la opción para actualizar el color de la caja.</p>
+        <label for="color">Elige un color</label>
+        <select id="color">
+          <option value="azul">Azul</option>
+          <option value="verde">Verde</option>
+          <option value="naranja">Naranja</option>
+        </select>
+        <div id="caja-color" class="color-box azul">¡Cambia mi color!</div>
+      </section>
+
+      <section class="card">
+        <h2>Evento keydown</h2>
+        <p>Pulsa una tecla dentro del campo para conocer su nombre.</p>
+        <label for="tecla">Prueba una tecla</label>
+        <input id="tecla" type="text" placeholder="Pulsa una tecla" />
+        <p id="tecla-resultado" class="result" aria-live="polite">Todavía no has pulsado una tecla.</p>
+      </section>
+
+      <section class="card challenge">
+        <h2>Tu reto</h2>
+        <ol>
+          <li>Haz que el contador reste uno con un segundo botón.</li>
+          <li>Agrega otro color a la lista y dale su propio estilo.</li>
+          <li>Prueba los eventos y observa cuándo se activa cada uno.</li>
+        </ol>
+        <p>Revisa <code>script.js</code>: allí encontrarás los eventos <code>click</code>, <code>input</code>, <code>change</code> y <code>keydown</code>.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+  background: #f3f6fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.hero {
+  padding: 3rem 1.25rem;
+  color: white;
+  text-align: center;
+  background: #c2410c;
+}
+
+.hero h1 {
+  margin: 0.4rem 0;
+}
+
+.hero p {
+  margin-bottom: 0;
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+main {
+  width: min(760px, calc(100% - 2rem));
+  margin: 2rem auto;
+}
+
+.card {
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 16px #17255412;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+button,
+input,
+select {
+  min-height: 42px;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font: inherit;
+}
+
+button {
+  border-color: #c2410c;
+  color: white;
+  background: #c2410c;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #9a3412;
+}
+
+input,
+select {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin-top: 0.4rem;
+}
+
+.result {
+  min-height: 1.5rem;
+  color: #7c2d12;
+  font-weight: bold;
+}
+
+.color-box {
+  max-width: 420px;
+  margin-top: 0.8rem;
+  padding: 1rem;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  transition: background-color 160ms ease;
+}
+
+.azul {
+  background: #2563eb;
+}
+
+.verde {
+  background: #16a34a;
+}
+
+.naranja {
+  background: #ea580c;
+}
+
+.challenge {
+  border-left: 5px solid #f59e0b;
+}
+
+code {
+  padding: 0.12rem 0.3rem;
+  border-radius: 4px;
+  background: #fff7ed;
+}

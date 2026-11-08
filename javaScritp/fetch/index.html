@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ejercicio para practicar fetch y archivos JSON en JavaScript." />
+    <title>Ejercicio de fetch y JSON | JavaScript</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <p class="eyebrow">JavaScript · Ejercicio 2</p>
+      <h1>Carga datos con fetch</h1>
+      <p>Lee un archivo JSON y muestra su contenido en la página.</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Datos del curso</h2>
+        <p>Pulsa el botón para cargar la información desde <code>curso.json</code>.</p>
+        <button id="cargar-btn" type="button">Cargar curso</button>
+        <p id="estado" class="status" role="status" aria-live="polite">Los datos todavía no se han cargado.</p>
+        <div id="curso"></div>
+      </section>
+
+      <section class="card challenge">
+        <h2>Tu reto</h2>
+        <ol>
+          <li>Abre <code>curso.json</code> y agrega un tema nuevo al arreglo <code>"temas"</code>.</li>
+          <li>Vuelve a cargar los datos y comprueba que aparece.</li>
+          <li>Cambia el nombre del curso y actualiza la página.</li>
+        </ol>
+        <p><strong>Importante:</strong> usa Live Server u otro servidor local; <code>fetch</code> no puede leer el archivo al abrir el HTML directamente.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

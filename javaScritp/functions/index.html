@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ejercicios sencillos para practicar funciones en JavaScript." />
+    <title>Ejercicios de funciones | JavaScript</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <p class="eyebrow">JavaScript · Ejercicio 1</p>
+      <h1>Practica las funciones</h1>
+      <p>Una función recibe datos, realiza una tarea y puede devolver un resultado.</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>1. Saluda a alguien</h2>
+        <p>Escribe un nombre y pulsa el botón. La función <code>crearSaludo</code> construye el mensaje.</p>
+        <form id="saludo-form">
+          <label for="nombre">Nombre</label>
+          <div class="form-row">
+            <input id="nombre" name="nombre" type="text" placeholder="Por ejemplo, Ana" required />
+            <button type="submit">Saludar</button>
+          </div>
+        </form>
+        <p id="saludo-resultado" class="result" aria-live="polite"></p>
+      </section>
+
+      <section class="card">
+        <h2>2. Suma dos números</h2>
+        <p>La función <code>sumar</code> recibe dos números y devuelve su suma.</p>
+        <div class="form-row">
+          <label class="sr-only" for="numero-uno">Primer número</label>
+          <input id="numero-uno" type="number" value="4" />
+          <span aria-hidden="true">+</span>
+          <label class="sr-only" for="numero-dos">Segundo número</label>
+
+          <input id="numero-dos" type="number" value="3" />
+
+          <button id="sumar-btn" type="button">Sumar</button>
+          
+        </div>
+        <p id="suma-resultado" class="result" aria-live="polite"></p>
+      </section>
+
+      <section class="card challenge">
+        <h2>Tu reto</h2>
+        <ol>
+          <li>Cambia el saludo para que diga también “¡Bienvenido/a!”.</li>
+          <li>Crea una función <code>multiplicar(a, b)</code> que devuelva el producto.</li>
+          <li>Prueba los ejercicios con distintos nombres y números.</li>
+        </ol>
+        <p>Abre <code>script.js</code> para ver cómo están hechas las funciones.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
