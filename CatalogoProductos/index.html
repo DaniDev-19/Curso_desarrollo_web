@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ViveresApp | Catálogo de productos</title>
+    <meta
+      name="description"
+      content="Catálogo de productos frescos y de calidad para tu hogar."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="encabezado">
+      <div class="topbar container">
+        <div class="brand">
+          <span class="brand-mark">V</span>
+          <span>ViveresApp</span>
+        </div>
+
+        <nav class="nav" aria-label="Navegación principal">
+          <a href="#">Inicio</a>
+          <a href="#">Ofertas</a>
+          <a href="#">Productos</a>
+          <a href="#">Contacto</a>
+        </nav>
+
+        <button class="carrito" type="button">Carrito (0)</button>
+      </div>
+    </header>
+
+    <main class="container main-content">
+      <section class="hero" aria-label="Promoción principal">
+        <div class="hero-copy">
+          <span class="eyebrow">Productos frescos</span>
+          <h1>Lo mejor para tu cocina, cada día.</h1>
+          <p>
+            Descubre frutas, verduras y productos de la casa con calidad,
+            frescura y precio justo.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#catalogo" class="btn btn-primary">Ver catálogo</a>
+            <a href="#ofertas" class="btn btn-secondary">Ver ofertas</a>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Producto destacado">
+          <span class="hero-badge">Oferta del día</span>
+          <img
+            src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80"
+            alt="Caja de frutas frescas"
+          />
+          <div class="hero-product-info">
+            <h2>Canasta Premium</h2>
+            <p>Frutas frescas + verduras de temporada</p>
+            <strong>$249.00</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="ofertas" class="ofertas" aria-labelledby="ofertas-title">
+        <div class="section-heading ofertas-header">
+          <div>
+            <span class="eyebrow">Ofertas del día</span>
+            <h2 id="ofertas-title">Promociones destacadas</h2>
+          </div>
+        </div>
+
+        <div class="carousel" aria-live="polite">
+          <button class="carousel-btn prev" type="button" aria-label="Oferta anterior">‹</button>
+
+          <div class="carousel-track">
+            <article class="carousel-item active">
+              <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1000&q=80" alt="Oferta frutas" />
+              <div class="carousel-copy">
+                <span class="eyebrow">Hasta 30% OFF</span>
+                <h3>Canasta fresca</h3>
+                <p>Frutas y verduras seleccionadas para tu hogar al mejor precio.</p>
+              </div>
+            </article>
+
+            <article class="carousel-item">
+              <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=1000&q=80" alt="Oferta panadería" />
+              <div class="carousel-copy">
+                <span class="eyebrow">Nuevo</span>
+                <h3>Desayunos saludables</h3>
+                <p>Aprovecha panes, frutas y productos naturales para empezar bien el día.</p>
+              </div>
+            </article>
+
+            <article class="carousel-item">
+              <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=80" alt="Oferta bebidas" />
+              <div class="carousel-copy">
+                <span class="eyebrow">Combo</span>
+                <h3>Mix de temporada</h3>
+                <p>Combos perfectos con sabor, variedad y descuentos especiales.</p>
+              </div>
+            </article>
+          </div>
+
+          <button class="carousel-btn next" type="button" aria-label="Siguiente oferta">›</button>
+        </div>
+      </section>
+
+      <section id="catalogo" class="catalogo" aria-labelledby="catalog-title">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Nuestro catálogo</span>
+            <h2 id="catalog-title">Productos recomendados</h2>
+          </div>
+
+          <div class="buscador-wrapper">
+            <input
+              id="buscador"
+              type="search"
+              placeholder="Buscar producto..."
+              aria-label="Buscar producto"
+            />
+          </div>
+        </div>
+
+        <div id="productGrid" class="grilla" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <aside id="cartPanel" class="cart-panel" aria-label="Resumen del carrito">
+      <div class="cart-header">
+        <h3>Resumen del carrito</h3>
+        <button class="cart-close" type="button" aria-label="Cerrar carrito">×</button>
+      </div>
+
+      <div id="cartItems" class="cart-items"></div>
+
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Total</span>
+          <strong id="cartTotal">$0</strong>
+        </div>
+        <button id="whatsappBtn" class="whatsapp-btn" type="button">
+          Enviar pedido por WhatsApp
+        </button>
+      </div>
+    </aside>
+
+    <footer class="finaly">
+      <div class="container footer-content">
+        <p>© 2026 ViveresApp</p>
+        <div class="socials" aria-label="Redes sociales">
+          <a href="https://www.facebook.com" target="_blank" rel="noreferrer">Facebook</a>
+          <a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://www.tiktok.com" target="_blank" rel="noreferrer">TikTok</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./card-producto.js"></script>
+    <script src="./buscador.js"></script>
+  </body>
+</html>
