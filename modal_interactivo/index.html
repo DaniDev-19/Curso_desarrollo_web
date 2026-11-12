@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Interactivo || Preguntas Frecuentes</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <section class="interactive-section">
+        <h2>Preguntas Frecuentes (Acordeón Nativo sin JS)</h2>
+
+        <details class="faq-item">
+            <summary>¿Qué incluye el curso de desarrollo web?</summary>
+            <p>Incluye módulos completos de HTML5 semántico, CSS3 moderno, Flexbox, Grid y JavaScript interactivo ,
+                Funciones nombradas, anónimas , Arrow Functions, Peticiones Fetch, Ciclos, Tipos de Datos, Listas y
+                Arrays, Objetos y Json con
+                proyectos reales.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Recibiré un certificado al finalizar?</summary>
+            <p>Sí, al completar todos los ejercicios prácticos recibirás una certificación respaldada.</p>
+        </details>
+
+        <hr class="separator">
+
+        <h2>Ventana Emergente Nativa HTML5</h2>
+
+        <button onclick="document.getElementById('modalContacto').showModal()" class="btn-open">
+            Abrir Formulario de Soporte
+        </button>
+
+        <dialog id="modalContacto" class="custom-modal">
+            <form method="dialog" class="modal-form">
+                <h3>Enviar mensaje a soporte</h3>
+
+                <label for="usr-email">Tu correo:</label>
+                <input type="email" id="usr-email" required placeholder="correo@ejemplo.com">
+
+                <label for="usr-msg">Mensaje:</label>
+                <textarea id="usr-msg" rows="4" required></textarea>
+
+                <div class="modal-actions">
+                    <button type="submit" class="btn-close">Cerrar</button>
+                    <button type="button" onclick="alert('¡Mensaje enviado!')" class="btn-send">Enviar</button>
+                </div>
+            </form>
+        </dialog>
+    </section>
+</body>
+
+</html>

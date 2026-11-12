@@ -1,0 +1,115 @@
+.cv-container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.cv-sidebar {
+  background: #1e293b;
+  color: #fff;
+  padding: 30px 20px;
+}
+
+.avatar-box img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+.cv-sidebar h1 {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.tagline {
+  color: #94a3b8;
+  text-align: center;
+  font-size: 0.85rem;
+  margin-bottom: 25px;
+}
+
+.cv-block h3 {
+  border-bottom: 2px solid #3b82f6;
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
+
+.contact-list,
+.skills-list {
+  list-style: none;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.contact-list li,
+.skills-list li {
+  margin-bottom: 8px;
+}
+
+.btn-download {
+  display: block;
+  text-align: center;
+  background: #3b82f6;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 25px;
+  font-weight: bold;
+}
+
+/* Main Content */
+.cv-main {
+  padding: 40px;
+}
+
+.cv-section {
+  margin-bottom: 30px;
+}
+
+.cv-section h2 {
+  color: #1e293b;
+  border-left: 4px solid #3b82f6;
+  padding-left: 10px;
+  font-size: 1.25rem;
+}
+
+.job-item {
+  margin-top: 15px;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.job-header h3 {
+  font-size: 1rem;
+  color: #334155;
+  margin: 0;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* Responsive para celulares */
+@media (max-width: 768px) {
+  .cv-container {
+    grid-template-columns: 1fr;
+  }
+}
